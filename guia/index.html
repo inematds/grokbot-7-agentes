@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<!-- FONTE do guia PT. Não edite guia/index.html direto: edite aqui e rode `python3 guia/build.py`.
+     Os marcadores PROMPT:NN são trocados pela "Instrução pronta" de agentes/NN-*.md. -->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GrokBot 7 Agentes — sua equipe de IA em fichas prontas</title>
+<meta name="description" content="Sete agentes para o GrokBot no formato Ficha do Agente do INEMA: instrução pronta para colar, nível de autonomia, 3 testes e checklist de supervisão. Escudo, Checagem, Redes, Negociador, Financeiro, Cérebro e Chefe de Gabinete.">
+<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/grokbot-7-agentes/guia/">
+<link rel="alternate" hreflang="en" href="https://inematds.github.io/grokbot-7-agentes/guia/en/">
+<link rel="alternate" hreflang="es" href="https://inematds.github.io/grokbot-7-agentes/guia/es/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#E2A23B; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#b9791d; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .lang{display:inline-flex;gap:2px;font-family:Sora;font-size:.78rem}
+  .lang a{color:var(--mut);padding:.2em .45em;border-radius:6px} .lang a.on{color:var(--amb);background:rgba(226,162,59,.12)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--amb);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  @media(max-width:760px){nav .links a.sec{display:none}}
+  @media(max-width:520px){nav .wrap{gap:8px;padding:8px 14px;height:auto;flex-wrap:wrap} nav .links{gap:8px;margin-left:0;width:100%;justify-content:space-between} nav .btn{padding:.45em .7em;font-size:.82rem} .tgl{width:34px;height:34px}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(226,162,59,.22),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.18rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:34ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;height:auto;display:block}
+  .resumo{padding:38px 0 34px;border-bottom:1px solid var(--line)}
+  .resumo p{font-size:1.12rem;line-height:1.7;max-width:74ch;margin:.55em 0 0}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:62ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.92rem;margin:0}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0}
+  pre .c{color:#6f6f7c} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px minmax(0,1fr);gap:16px;margin-bottom:26px}
+  .step>div,.card{min-width:0}
+  p code,li code,td code{overflow-wrap:anywhere}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .7em}
+  .phase{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .phase:last-child{border:none}
+  .phase .tag{flex:0 0 92px;font-family:Sora;font-weight:800;color:var(--amb)}
+  .phase .d strong{display:block;margin-bottom:.2em}
+  .phase .d span{color:var(--mut);font-size:.92rem}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
+  /* fichas dos agentes */
+  .ag{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+  .ag .top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:.5em}
+  .ag h3{font-size:1.15rem}
+  .lv{font-family:Sora;font-size:.75rem;font-weight:700;letter-spacing:.06em;border:1px solid var(--amb);color:var(--amb);border-radius:999px;padding:.2em .7em}
+  .ag p{color:var(--mut);margin:.3em 0}
+  .ag .meta{font-size:.9rem}
+  .ag .meta b{color:var(--txt);font-weight:600}
+  .ag details{margin-top:.8em}
+  .ag summary{cursor:pointer;font-family:Sora;font-weight:600;color:var(--amb)}
+  .ag pre{white-space:pre-wrap;margin:.7em 0 .4em}
+  .cp{background:var(--bg2);border:1px solid var(--line);color:var(--txt);border-radius:10px;padding:.45em .9em;font-family:Sora;font-size:.85rem;cursor:pointer}
+  .cp:hover{border-color:var(--amb)}
+  .note{border-left:3px solid var(--amb);padding:.6em 1em;background:var(--bg2);border-radius:0 10px 10px 0;color:var(--mut);font-size:.95rem;max-width:74ch}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="emoji">🦾</span> GrokBot 7 Agentes</a>
+  <span class="sep">|</span>
+  <span class="clubpro">
+    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <span class="sep">-</span>
+    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+  </span>
+  <div class="links">
+    <a class="sec" href="#oque">O que é</a>
+    <a class="sec" href="#fluxo">Como funciona</a>
+    <a class="sec" href="#guia">Guia de uso</a>
+    <a class="sec" href="#agentes">Os 7 agentes</a>
+    <a class="sec" href="#niveis">Níveis</a>
+    <span class="lang"><a class="on" href="./">PT</a><a href="en/">EN</a><a href="es/">ES</a></span>
+    <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
+    <a class="btn" href="https://github.com/inematds/grokbot-7-agentes" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div>
+      <span class="chip">Kit de agentes para o GrokBot</span>
+      <h1>Sete agentes, <span class="amb">uma equipe</span> que trabalha por você</h1>
+      <p class="lead">Fichas prontas para colar no GrokBot, com limites claros do que cada agente pode fazer sozinho.</p>
+      <div class="cta">
+        <a class="btn" href="#guia">Começar o guia</a>
+        <a class="btn ghost" href="https://github.com/inematds/grokbot-7-agentes" target="_blank" rel="noopener">Ver no GitHub</a>
+      </div>
+    </div>
+    <figure><img src="assets/banner.jpg" alt="Banner: 7 agentes GrokBot, uma equipe de IA que trabalha enquanto você vive"></figure>
+  </div>
+</header>
+
+<section id="resumo" class="resumo"><div class="wrap">
+  <span class="chip">Em resumo</span>
+  <p>É um kit com sete agentes prontos para quem usa o GrokBot, o assistente de agentes da xAI. Cada agente vem numa ficha: um texto para colar no GrokBot, o que ele pode e não pode fazer sozinho, três testes para fazer antes de confiar e uma rotina curta de acompanhamento. Juntos, eles vigiam seu e-mail, checam contratos, cuidam das redes, pedem orçamentos, olham suas finanças, guardam a memória da equipe e coordenam tudo. Para usar, basta ter o GrokBot e conectar os aplicativos que cada ficha indica.</p>
+</div></section>
+
+<section id="oque"><div class="wrap">
+  <span class="chip">O que é</span>
+  <h2>Do bot solto para uma equipe com regras</h2>
+  <p class="sub">Criar um bot é fácil. O difícil é ele fazer o certo sem você vigiar o tempo todo. Por isso cada agente vem no formato <a href="https://inematds.github.io/7pa/" target="_blank" rel="noopener">Ficha do Agente</a> do INEMA.</p>
+  <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="Os agentes do kit: escudo anti-spam, checagem prévia, redes sociais, negociador, diretor financeiro e cérebro compartilhado" loading="lazy" style="width:100%;display:block"></figure>
+  <div class="grid g3">
+    <div class="card"><h3>📋 Instrução pronta</h3><p>Um texto em português para colar no GrokBot. Você só preenche o que está entre [colchetes]: seus e-mails, seu tema, seu orçamento.</p></div>
+    <div class="card"><h3>🚦 Nível de autonomia</h3><p>Cada agente tem um nível de N0 (só olha) a N4 (toca um processo inteiro). Tudo que mexe com dinheiro ou fala com gente de fora espera o seu OK.</p></div>
+    <div class="card"><h3>🧪 Testes e rotina</h3><p>Três testes para fazer antes de confiar e um checklist de 2 minutos por dia e 10 por semana. Você ajusta uma regra por vez.</p></div>
+  </div>
+</div></section>
+
+<section id="fluxo"><div class="wrap">
+  <span class="chip">Como funciona</span>
+  <h2>Sete agentes, em ordem de montagem</h2>
+  <p class="sub">Comece pelo trabalho que mais toma a sua semana. O Cérebro e o Chefe de Gabinete entram por último, quando já existem agentes para coordenar.</p>
+  <div class="flow">
+    <span>🛡️ Escudo</span><span class="arr">→</span>
+    <span>🔍 Checagem</span><span class="arr">→</span>
+    <span>📱 Redes</span><span class="arr">→</span>
+    <span>💸 Negociador</span><span class="arr">→</span>
+    <span>📊 Financeiro</span><span class="arr">→</span>
+    <span>🧠 Cérebro</span><span class="arr">→</span>
+    <span>🤝 Chefe de Gabinete</span>
+  </div>
+  <h3 style="margin:2.2em 0 .8em">Quando criar um bot novo (e quando não)</h3>
+  <p class="sub" style="margin-bottom:1.2em">Mais bots não é melhor: seis bots são seis conversas para acompanhar. Crie um bot separado só se ele precisar de pelo menos uma destas três coisas. Se não precisar, peça direto ao Chefe de Gabinete.</p>
+  <div class="grid g3">
+    <div class="card"><h3>🗂️ Memória própria</h3><p>As anotações dele bagunçariam as de outro bot (ex.: o histórico de fornecedores do Negociador).</p></div>
+    <div class="card"><h3>🔑 Permissão diferente</h3><p>Ele precisa ler e o outro escrever, ou um pode gastar e o outro não (ex.: o Financeiro só lê).</p></div>
+    <div class="card"><h3>⏰ Relógio próprio</h3><p>Ele roda num horário ou gatilho seu (ex.: o Escudo às 7h, o resumo do Chefe às 8h).</p></div>
+  </div>
+</div></section>
+
+<section id="pre"><div class="wrap">
+  <span class="chip">Pré-requisitos</span>
+  <h2>O que você precisa</h2>
+  <p class="sub">Nenhum conhecimento técnico. Se você consegue escrever uma mensagem, consegue montar estes agentes.</p>
+  <div class="grid g3">
+    <div class="card"><h3>GrokBot</h3><p>Uma conta no GrokBot (xAI). Ele tem uma cota de uso semanal: rotinas mal configuradas gastam a cota rápido, e o agente Financeiro ajuda a vigiar isso.</p></div>
+    <div class="card"><h3>Seus aplicativos</h3><p>Conecte no GrokBot o que cada ficha pede: Gmail ou Outlook, pasta de contratos, banco em modo leitura. Para conectar qualquer serviço, pergunte: <code>"Quero conectar ao [serviço]. O que você precisa?"</code></p></div>
+    <div class="card"><h3>Ferramentas opcionais</h3><p>Só para alguns agentes: uma ferramenta de agendamento de posts com DM automática (Redes), uma carteira com limite de gasto (Negociador) e um banco de dados (Cérebro). Os nomes usados como exemplo estão em cada ficha.</p></div>
+  </div>
+</div></section>
+
+<section id="guia"><div class="wrap">
+  <span class="chip">Guia de uso · passo a passo</span>
+  <h2>Monte seu primeiro agente em 15 minutos</h2>
+  <p class="sub">O mesmo caminho vale para os sete. Faça um, deixe rodar uma semana, depois faça o próximo.</p>
+
+  <div class="step"><div class="b">1</div><div>
+    <h3>Escolha o trabalho que mais toma a sua semana</h3>
+    <p>Não comece pelos sete. Escolha um: e-mail (Escudo), contratos (Checagem), redes (Redes), orçamentos (Negociador) ou gastos (Financeiro).</p>
+  </div></div>
+
+  <div class="step"><div class="b">2</div><div>
+    <h3>Abra a ficha e copie a instrução pronta</h3>
+    <p>Na seção <a href="#agentes">Os 7 agentes</a>, abra "Ver instrução pronta" e clique em copiar. A ficha completa, com os 7 princípios, fica no GitHub.</p>
+  </div></div>
+
+  <div class="step"><div class="b">3</div><div>
+    <h3>Cole no GrokBot e preencha os colchetes</h3>
+    <p>Cole o texto numa conversa nova no GrokBot e troque o que está entre [colchetes] pelos seus dados. O GrokBot cria o bot com nome, missão e regras.</p>
+<pre><span class="c"># exemplo, no Escudo</span>
+<span class="k">E-mails:</span> <span class="s">voce@gmail.com, contato@suaempresa.com</span>
+<span class="k">Telefone(s):</span> <span class="s">+55 11 99999-9999</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">4</div><div>
+    <h3>Conecte os aplicativos e o horário</h3>
+    <p>Conecte o que a ficha pede e confirme o horário. Chave de API (de uma ferramenta de agendamento, por exemplo) vai no campo seguro que o GrokBot abre, nunca no meio da conversa.</p>
+<pre><span class="k">Quero conectar meu Gmail e meu Outlook. Rode este bot todo dia às 7h.</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">5</div><div>
+    <h3>Rode os 3 testes antes de confiar</h3>
+    <p>Toda ficha traz três testes: informação faltando, pedido proibido e alarme. Se o bot errar algum, ajuste a regra na instrução e teste de novo.</p>
+  </div></div>
+
+  <div class="step"><div class="b">6</div><div>
+    <h3>Acompanhe 2 minutos por dia</h3>
+    <p>Leia o relatório, aprove o que estiver esperando seu OK. Uma vez por semana, ajuste uma regra só. Anote o que quebrou na tabela "Registro de falhas" da ficha.</p>
+  </div></div>
+
+  <div class="step"><div class="b">7</div><div>
+    <h3>Ligue o Cérebro e o Chefe de Gabinete</h3>
+    <p>Com dois ou mais agentes rodando, monte o Cérebro (memória que todos os bots usam) e depois o Chefe de Gabinete (um resumo às 8h com tudo que precisa de você).</p>
+  </div></div>
+</div></section>
+
+<section id="agentes"><div class="wrap">
+  <span class="chip">Os 7 agentes</span>
+  <h2>As fichas, uma por agente</h2>
+  <p class="sub">Cada cartão mostra o nível, quando roda e o que conectar. Abra para copiar a instrução pronta. A ficha completa (7 princípios, testes, checklist) está no link do GitHub.</p>
+
+  <div class="ag" id="escudo">
+    <div class="top"><h3>🛡️ Escudo</h3><span class="lv">N2 · prepara, você aprova</span></div>
+    <p>Lê sua caixa e o spam todo dia, resgata e-mail bom que caiu no lixo, sinaliza golpe (como mudança de dados bancários) e acha seu telefone em sites de busca de pessoas.</p>
+    <p class="meta"><b>Quando roda:</b> todo dia às 7h · <b>Conectar:</b> Gmail e/ou Outlook · <b>Nunca:</b> apaga e-mail, clica em link suspeito ou envia pedido de remoção sem seu OK.</p>
+    <details><summary>Ver instrução pronta</summary><pre>Quero criar um bot chamado "Escudo". Sua missão é proteger minha caixa de e-mail e meu número de telefone, todo dia às 7h.
+
+Dados que você vai vigiar:
+- E-mails: [COLOQUE AQUI SEUS ENDEREÇOS]
+- Telefone(s): [COLOQUE AQUI SEUS NÚMEROS]
+
+Todo dia:
+1. Leia minha caixa de entrada e a pasta de spam das contas conectadas.
+2. Tire do spam todo e-mail legítimo (cliente, fornecedor, banco, contrato, pagamento, convite) e mova para a entrada. Na dúvida, resgate e me avise.
+3. Sinalize como suspeito qualquer e-mail que peça senha, código, pagamento urgente ou que traga mudança de dados bancários de alguém com quem eu já negocio. Mudança de dados bancários é sempre alerta vermelho.
+4. Pesquise meus telefones em sites de busca de pessoas. Para cada site onde aparecer, prepare o pedido de remoção, mas NÃO envie sem meu OK.
+
+Regras:
+- Nunca apague e-mail de vez. Nunca clique em link nem abra anexo de e-mail suspeito. Nunca pague nada nem informe senha ou código.
+- Nada que fale com alguém de fora (resposta, bloqueio, pedido de remoção) sai sem meu OK explícito.
+- Se uma informação faltar ou conflitar, escreva "não sei" e coloque na lista de revisão. Nunca invente dados.
+
+Pare e me chame na hora se aparecer: pedido de mudança de dados bancários, cobrança com ameaça e prazo curto, ou contrato esperando minha assinatura.
+
+Relatório das 7h, curto, uma linha por item:
+- Resgatados do spam (assunto e remetente)
+- Golpes sinalizados (motivo)
+- Sites com meu número + pedidos de remoção esperando OK
+- Erros ou dúvidas da última execução
+
+Antes de começar, confirme em 3 linhas o que entendeu.</pre><button class="cp" type="button" data-ok="Copiado!">Copiar</button></details>
+    <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/01-escudo.md" target="_blank" rel="noopener">Ficha completa →</a></p>
+  </div>
+
+  <div class="ag" id="checagem">
+    <div class="top"><h3>🔍 Checagem</h3><span class="lv">N1 · pesquisa e prepara</span></div>
+    <p>Seu segundo par de olhos antes de assinar: checa a pessoa ou empresa em 4 lugares (registros oficiais, avaliações, X e notícias), lê as letras miúdas e aponta o que não bate.</p>
+    <p class="meta"><b>Quando roda:</b> todo dia, sem você pedir, e sob pedido · <b>Conectar:</b> e-mail e pasta de contratos · <b>Nunca:</b> responde, aceita ou negocia em seu nome.</p>
+    <details><summary>Ver instrução pronta</summary><pre>Quero criar um bot chamado "Checagem". Você é meu segundo par de olhos: antes de eu assinar, fechar parceria ou pagar alguém novo, você investiga e me entrega um parecer.
+
+Seja proativo: todo dia, olhe meu e-mail e a pasta de contratos procurando contratos, propostas e pessoas ou empresas novas com quem estou conversando, e faça a checagem sem eu pedir.
+
+Para cada pessoa ou empresa, cheque 4 lugares:
+1. Registros oficiais (cadastro da empresa, CNPJ ou equivalente do país)
+2. Avaliações de clientes
+3. X (o que dizem e o que ela publica)
+4. Notícias
+
+Para cada contrato, leia as letras miúdas e destaque: multa, renovação automática, exclusividade, prazo de pagamento, propriedade do que for produzido e foro. Aponte onde o contrato e os fatos não batem.
+
+Regras:
+- O site da própria empresa não serve como única prova sobre ela.
+- Se não encontrar algo, escreva "não encontrei". Se as fontes discordarem, mostre as duas. Nunca invente dado nem cláusula.
+- Você só pesquisa e escreve o parecer. Nunca responda à outra parte, nunca aceite, recuse ou negocie em meu nome. Antes de qualquer ação além do parecer, me pergunte.
+
+Pare e me chame na hora se achar: risco alto, processo ou golpe ligado ao nome, ou contrato com prazo curto para assinar.
+
+Formato do parecer:
+- Quem é (resumo das 4 fontes, com links)
+- O que o contrato diz de importante
+- O que não bate
+- Perguntas para eu fazer antes de assinar
+- Risco: baixo, médio ou alto, e por quê
+
+Antes de começar, confirme em 3 linhas o que entendeu.</pre><button class="cp" type="button" data-ok="Copiado!">Copiar</button></details>
+    <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/02-checagem.md" target="_blank" rel="noopener">Ficha completa →</a></p>
+  </div>
+
+  <div class="ag" id="redes">
+    <div class="top"><h3>📱 Redes</h3><span class="lv">N2 · prepara, você aprova</span></div>
+    <p>Pesquisa tendências no X, prepara posts na sua voz e monta a DM automática por palavra-chave: comentário → seguir → e-mail → link. Cliente vem da conversa, não só do post.</p>
+    <p class="meta"><b>Quando roda:</b> toda manhã e sob pedido · <b>Conectar:</b> ferramenta de agendamento com DM automática (chave de API) · <b>Nunca:</b> publica sem OK, responde polêmica ou fala de preço.</p>
+    <details><summary>Ver instrução pronta</summary><pre>Quero criar um bot chamado "Redes". Você é meu gestor de redes sociais. Meu tema é: [SEU TEMA]. Minhas redes: [INSTAGRAM, TIKTOK, YOUTUBE, X...].
+
+Todo dia de manhã:
+1. Pesquise no X as 5 maiores tendências do meu tema e me dê um resumo curto de cada uma, com link.
+2. Sugira de 1 a 3 posts com base nessas tendências, na minha voz. Exemplos da minha voz: [COLE 3 POSTS SEUS].
+
+Quando eu pedir um post:
+- Escreva o texto e a sugestão de imagem.
+- Monte o rascunho de uma DM automática: quem comentar a palavra-chave [PALAVRA] recebe uma mensagem pedindo para seguir, pede o e-mail e entrega o link [LINK].
+
+Regras:
+- Nada é publicado, agendado ou ligado sem meu OK explícito.
+- Nunca responda polêmica, nunca fale de preço nem feche venda por DM, nunca compre seguidor ou anúncio.
+- Use só números reais das contas conectadas. Se não tiver o dado, diga. Nunca invente métrica.
+
+Pare e me chame se aparecer: comentário negativo ou polêmica, pedido de parceria ou imprensa, ou DM falando de dinheiro.
+
+Relatório diário: tendências, posts esperando aprovação, automações ativas e quantos e-mails cada uma trouxe.
+
+Antes de começar, confirme em 3 linhas o que entendeu.</pre><button class="cp" type="button" data-ok="Copiado!">Copiar</button></details>
+    <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/03-redes.md" target="_blank" rel="noopener">Ficha completa →</a></p>
+  </div>
+
+  <div class="ag" id="negociador">
+    <div class="top"><h3>💸 Negociador</h3><span class="lv">N2 · prepara, você aprova</span></div>
+    <p>Acha fornecedores, pede orçamento por uma caixa de e-mail só dele, compara pelo menos 3 propostas e pechincha. Compra só com o seu OK e dentro do limite que você der.</p>
+    <p class="meta"><b>Quando roda:</b> quando você pedir · <b>Conectar:</b> e-mail próprio do bot e, se quiser, uma carteira com limite · <b>Nunca:</b> passa do orçamento, assina ou paga adiantado.</p>
+    <details><summary>Ver instrução pronta</summary><pre>Quero criar um bot chamado "Negociador". Crie uma caixa de e-mail só sua para conversar com fornecedores.
+
+Quando eu disser o que preciso, você:
+1. Encontra pelo menos 5 fornecedores na minha região ou online.
+2. Escreve um pedido de orçamento claro para cada um e me mostra antes de enviar.
+3. Depois do meu OK, envia pela sua caixa, acompanha as respostas e negocia com educação e firmeza para baixar o preço ou melhorar as condições.
+4. Me entrega uma tabela: fornecedor, preço inicial, preço negociado, prazo, condições e sua recomendação.
+
+Regras:
+- No mínimo 3 orçamentos antes de recomendar.
+- Apresente-se como assistente que trabalha para mim. Nunca minta sobre ter outra proposta.
+- Orçamento máximo deste pedido: [VALOR]. Prazo: [DATA]. Nunca passe do máximo.
+- Nenhuma compra, aceite ou pagamento sem meu OK explícito. Nunca assine contrato, nunca dê meus dados pessoais ou bancários, nunca pague adiantado.
+- Use só preços confirmados por escrito. Se um fornecedor não responder, marque "sem resposta". Nunca invente preço.
+
+Pare e me chame se: pedirem pagamento adiantado, o preço passar do limite, aparecer condição estranha, ou um fornecedor parecer golpe.
+
+Pedido de hoje: [O QUE VOCÊ PRECISA]
+
+Antes de começar, confirme em 3 linhas o que entendeu.</pre><button class="cp" type="button" data-ok="Copiado!">Copiar</button></details>
+    <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/04-negociador.md" target="_blank" rel="noopener">Ficha completa →</a></p>
+  </div>
+
+  <div class="ag" id="financeiro">
+    <div class="top"><h3>📊 Financeiro</h3><span class="lv">N0 · só olha</span></div>
+    <p>O diretor financeiro sem mãos: acha assinatura duplicada, ferramenta cara para pouco uso, dinheiro a receber esquecido e o quanto cada bot gasta da cota semanal do GrokBot.</p>
+    <p class="meta"><b>Quando roda:</b> todo dia, com painel às segundas · <b>Conectar (só leitura):</b> banco, PayPal, sistema contábil · <b>Nunca:</b> paga, transfere ou cancela nada.</p>
+    <details><summary>Ver instrução pronta</summary><pre>Quero criar um bot chamado "Financeiro". Você é meu diretor financeiro, mas só olha: não tem permissão para mexer em dinheiro.
+
+Conexões (só leitura): [BANCO, PAYPAL, SISTEMA CONTÁBIL, CORRETORA...]
+
+Todo dia, leia as contas conectadas. Toda segunda-feira, me entregue um painel com:
+1. Entradas e saídas da semana.
+2. Todas as assinaturas, destacando as que mudaram de preço.
+3. Cortes sugeridos: assinatura duplicada, ferramenta com preço mínimo muito acima do uso, cobrança que subiu sem aviso. Para cada uma, quanto economizo por mês.
+4. Dinheiro a receber que está parado (comissão, afiliado, reembolso).
+5. Quanto cada um dos meus bots no GrokBot está gastando da cota semanal, e qual rotina está gastando à toa.
+
+Regras:
+- Você nunca paga, transfere, cancela ou altera nada. Você sugere; eu decido e faço.
+- Todo número vem com a fonte (qual conta, qual extrato). Se faltar ou conflitar, marque "conferir" e mostre os dois valores. Nunca invente valor.
+
+Pare e me chame na hora se aparecer: cobrança que eu não reconheço, valor muito acima do normal, cobrança em dobro ou sinal de fraude.
+
+Antes de começar, confirme em 3 linhas o que entendeu.</pre><button class="cp" type="button" data-ok="Copiado!">Copiar</button></details>
+    <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/05-financeiro.md" target="_blank" rel="noopener">Ficha completa →</a></p>
+  </div>
+
+  <div class="ag" id="cerebro">
+    <div class="top"><h3>🧠 Cérebro</h3><span class="lv">N3 · executa</span></div>
+    <p>A memória da equipe. A memória de cada bot do GrokBot é um resumo que fica só com ele; o Cérebro guarda tudo palavra por palavra num banco de dados que todos os bots consultam. Só ele escreve.</p>
+    <p class="meta"><b>Quando roda:</b> sob pedido · <b>Conectar:</b> um banco de dados (o exemplo da ficha tem plano grátis) · <b>Nunca:</b> guarda senha, cartão ou documento.</p>
+    <details><summary>Ver instrução pronta</summary><pre>Quero criar um bot chamado "Cérebro". Você é a memória compartilhada da minha equipe de bots, guardada no banco de dados conectado: [MONGODB OU OUTRO].
+
+Como funciona:
+- Você é o ÚNICO que escreve na memória. Os outros bots (Escudo, Checagem, Redes, Negociador, Financeiro, Chefe de Gabinete) pedem para você guardar ou buscar.
+- Guarde exatamente como veio (contrato, transcrição, tabela). Não resuma na hora de guardar.
+- Toda nota leva: data, origem (qual bot ou pessoa), assunto e etiquetas.
+- Busque de dois jeitos: exato (data, nome, número) e por sentido (perguntas abertas). Sempre diga de qual nota tirou a resposta.
+
+Comandos que vou usar:
+- "Lembre isso: ..." ou "Guarde no Cérebro: ..."
+- "O que eu sei sobre ...?"
+- "Leia minhas notas sobre ... e escreva um resumo de uma página."
+
+Regras:
+- Nunca guarde senha, código de acesso, número de cartão ou documento pessoal. Se aparecer, recuse e me avise.
+- Se não achar, diga "não tenho isso guardado". Nunca complete de cabeça.
+- Apagar ou reescrever nota antiga só com meu OK explícito.
+
+Pare e me chame se: pedirem para apagar muita coisa de uma vez, aparecer dado sensível, ou o banco estiver perto do limite do plano.
+
+Resumo semanal: notas novas e de onde vieram, as 5 mais consultadas, perguntas sem resposta.
+
+Antes de começar, confirme em 3 linhas o que entendeu.</pre><button class="cp" type="button" data-ok="Copiado!">Copiar</button></details>
+    <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/06-cerebro.md" target="_blank" rel="noopener">Ficha completa →</a></p>
+  </div>
+
+  <div class="ag" id="chefe">
+    <div class="top"><h3>🤝 Chefe de Gabinete</h3><span class="lv">N3 · executa</span></div>
+    <p>Seu único ponto de contato: lê os relatórios de todos, distribui tarefas e te entrega às 8h o que precisa de você, o que ficou pronto e o que travou. Não aprova nada no seu lugar.</p>
+    <p class="meta"><b>Quando roda:</b> todo dia às 8h e sempre que você falar com ele · <b>Conectar:</b> os outros bots e o Cérebro · <b>Nunca:</b> gasta dinheiro ou fala com gente de fora.</p>
+    <details><summary>Ver instrução pronta</summary><pre>Quero criar um bot chamado "Chefe de Gabinete". Você coordena minha equipe de bots: Escudo, Checagem, Redes, Negociador, Financeiro e Cérebro. Eu falo com você; você fala com eles.
+
+Todo dia às 8h, me entregue um resumo curto, em ordem de urgência:
+1. O que precisa de mim hoje (aprovações, decisões)
+2. O que ficou pronto
+3. O que está em andamento
+4. O que travou e por quê
+5. Custo da semana (peça ao Financeiro)
+
+Quando eu pedir algo:
+- Decida qual bot faz e passe a tarefa. Se nenhum precisar de memória, permissão ou horário próprios, faça você mesmo.
+- Para guardar ou buscar informação, use o Cérebro.
+
+Regra para criar bot novo: só sugira criar se ele precisar de memória própria, de permissão diferente ou de horário próprio. Senão, fica com você.
+
+Regras:
+- Você nunca aprova em meu nome o que outro bot pediu meu OK. Repasse para mim.
+- Você não gasta dinheiro e não fala com ninguém de fora.
+- Use só os relatórios dos bots e o Cérebro. Se um bot não reportou, diga qual. Nunca invente status.
+
+Pare e me chame se: um bot falhar duas vezes seguidas, dois bots se contradisserem, chegar algo urgente fora do horário, ou a cota semanal estiver acabando.
+
+Antes de começar, confirme em 3 linhas o que entendeu.</pre><button class="cp" type="button" data-ok="Copiado!">Copiar</button></details>
+    <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/07-chefe-de-gabinete.md" target="_blank" rel="noopener">Ficha completa →</a></p>
+  </div>
+</div></section>
+
+<section id="niveis"><div class="wrap">
+  <span class="chip">Níveis de autonomia</span>
+  <h2>Quanto cada agente pode fazer sozinho</h2>
+  <p class="sub">O nível sai de uma regra fixa: se envolve dinheiro, algo que não dá para desfazer ou gente de fora, o agente prepara e você aprova. Na dúvida, o nível menor.</p>
+  <div class="phase"><div class="tag">N0</div><div class="d"><strong>Só consulta</strong><span>Lê e conta, não mexe em nada. Financeiro.</span></div></div>
+  <div class="phase"><div class="tag">N1</div><div class="d"><strong>Pesquisa e prepara</strong><span>Entrega um parecer ou rascunho; a decisão é sua. Checagem.</span></div></div>
+  <div class="phase"><div class="tag">N2</div><div class="d"><strong>Prepara, você aprova</strong><span>Deixa tudo pronto, mas nada sai sem o seu OK. Escudo, Redes, Negociador.</span></div></div>
+  <div class="phase"><div class="tag">N3</div><div class="d"><strong>Executa</strong><span>Faz sozinho o que é interno e dá para desfazer. Cérebro, Chefe de Gabinete.</span></div></div>
+  <div class="phase"><div class="tag">N4</div><div class="d"><strong>Toca um processo inteiro</strong><span>Só depois de 2 meses de relatórios limpos. Nenhum agente do kit começa aqui.</span></div></div>
+  <p class="note" style="margin-top:1.6em">Para subir de nível, cada ficha diz a condição (ex.: 4 semanas aprovando sem corrigir). O agente propõe, você decide. As fichas foram escritas pelo INEMA a partir de uma aula pública sobre agentes no GrokBot; rode os 3 testes no seu GrokBot antes de confiar.</p>
+</div></section>
+
+<footer>
+  <div class="wrap">
+    <div class="pill">GrokBot</div><div class="pill">Ficha do Agente</div><div class="pill">PT · EN · ES</div>
+    <p style="margin-top:18px">GrokBot 7 Agentes · kit aberto e gratuito ·
+      <a href="https://github.com/inematds/grokbot-7-agentes">inematds/grokbot-7-agentes</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var KEY='grokbot-7-agentes-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; }
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      localStorage.setItem(KEY, light?'light':'dark');
+    });
+    document.querySelectorAll('.cp').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var pre=btn.previousElementSibling, txt=pre.innerText, old=btn.textContent;
+        var done=function(){ btn.textContent=btn.dataset.ok; setTimeout(function(){btn.textContent=old;},1600); };
+        if(navigator.clipboard){ navigator.clipboard.writeText(txt).then(done,function(){}); }
+      });
+    });
+  })();
+</script>
+</body>
+</html>
