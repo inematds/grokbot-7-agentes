@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- FUENTE de la guía ES. No edites guia/index.html directo: edita aquí y ejecuta `python3 guia/build.py`.
+<!-- FUENTE de la guía ES. No edites guia/es/index.html directamente: edita aquí y ejecuta `python3 guia/build.py`.
      Los marcadores PROMPT:NN se reemplazan por la "Instrucción lista" de agentes/NN-*.md. -->
 <html lang="es">
 <head>
@@ -88,6 +88,11 @@
   .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
   .step h3{font-size:1.12rem;margin-bottom:.3em}
   .step p{color:var(--mut);margin:.2em 0 .7em}
+  .step pre{white-space:pre-wrap;overflow-wrap:anywhere}
+  dl.gl{display:grid;grid-template-columns:minmax(120px,200px) 1fr;gap:10px 18px;margin:0}
+  dl.gl dt{font-family:Sora;font-weight:600}
+  dl.gl dd{margin:0;color:var(--mut)}
+  @media(max-width:540px){dl.gl{grid-template-columns:1fr} dl.gl dd{margin-bottom:8px}}
   .phase{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
   .phase:last-child{border:none}
   .phase .tag{flex:0 0 92px;font-family:Sora;font-weight:800;color:var(--amb)}
@@ -95,7 +100,7 @@
   .phase .d span{color:var(--mut);font-size:.92rem}
   footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
   .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
-  /* fichas dos agentes */
+  /* fichas de los agentes */
   .ag{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
   .ag .top{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:.5em}
   .ag h3{font-size:1.15rem}
@@ -128,7 +133,7 @@
     <a class="sec" href="#agentes">Los 7 agentes</a>
     <a class="sec" href="#niveis">Niveles</a>
     <span class="lang"><a href="../">PT</a><a href="../en/">EN</a><a class="on" href="./">ES</a></span>
-    <button class="tgl" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">🌙</button>
+    <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
     <a class="btn" href="https://github.com/inematds/grokbot-7-agentes" target="_blank" rel="noopener">GitHub</a>
   </div>
 </div></nav>
@@ -138,7 +143,7 @@
   <div class="wrap">
     <div>
       <span class="chip">Kit de agentes para GrokBot</span>
-      <h1>Siete agentes, <span class="amb">un equipo</span> que trabaja por ti</h1>
+      <h1>Siete agentes, <span class="amb">un equipo</span> que trabaja para ti</h1>
       <p class="lead">Fichas listas para pegar en GrokBot, con límites claros de lo que cada agente puede hacer solo.</p>
       <div class="cta">
         <a class="btn" href="#guia">Empezar la guía</a>
@@ -151,17 +156,17 @@
 
 <section id="resumo" class="resumo"><div class="wrap">
   <span class="chip">En resumen</span>
-  <p>Es un kit con siete agentes listos para quienes usan GrokBot, el asistente de agentes de xAI. Cada agente viene en una ficha: un texto para pegar en GrokBot, lo que puede y no puede hacer solo, tres pruebas para hacer antes de confiar y una rutina corta de seguimiento. Juntos, vigilan tu correo, verifican contratos, cuidan las redes, piden presupuestos, miran tus finanzas, guardan la memoria del equipo y coordinan todo. Para usarlo, basta con tener GrokBot y conectar las aplicaciones que indica cada ficha.</p>
+  <p>Es un kit con siete agentes listos para quienes usan GrokBot, el asistente de agentes de xAI. Cada agente viene en una ficha: un texto para pegar en GrokBot, lo que puede y no puede hacer solo, tres pruebas para hacer antes de confiar y una rutina corta de seguimiento. Juntos, vigilan tu correo, verifican contratos, cuidan las redes, piden presupuestos, miran tus finanzas, guardan la memoria del equipo y coordinan todo. Para usarlo, solo necesitas tener GrokBot y conectar las aplicaciones que indica cada ficha.</p>
 </div></section>
 
 <section id="oque"><div class="wrap">
   <span class="chip">Qué es</span>
   <h2>Del bot suelto a un equipo con reglas</h2>
-  <p class="sub">Crear un bot es fácil. Lo difícil es que haga lo correcto sin que lo vigiles todo el tiempo. Por eso cada agente viene en el formato <a href="https://inematds.github.io/7pa/" target="_blank" rel="noopener">Ficha del Agente</a> de INEMA.</p>
+  <p class="sub">Crear un bot es fácil. Lo difícil es que haga lo correcto sin que tú lo vigiles todo el tiempo. Por eso cada agente viene en el formato <a href="https://inematds.github.io/7pa/" target="_blank" rel="noopener">Ficha del Agente</a> de INEMA.</p>
   <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="../assets/banner-grade-es.jpg" alt="Los agentes del kit: escudo antispam, verificación previa, redes sociales, negociador, director financiero y cerebro compartido" loading="lazy" style="width:100%;display:block"></figure>
   <div class="grid g3">
     <div class="card"><h3>📋 Instrucción lista</h3><p>Un texto en español para pegar en GrokBot. Solo completas lo que está entre [corchetes]: tus correos, tu tema, tu presupuesto.</p></div>
-    <div class="card"><h3>🚦 Nivel de autonomía</h3><p>Cada agente tiene un nivel de N0 (solo mira) a N4 (lleva un proceso completo). Todo lo que toca dinero o habla con gente de fuera espera tu OK.</p></div>
+    <div class="card"><h3>🚦 Nivel de autonomía</h3><p>Cada agente tiene un nivel de N0 (solo mira) a N4 (lleva un proceso completo). Todo lo que toca dinero o habla con gente de afuera espera tu OK.</p></div>
     <div class="card"><h3>🧪 Pruebas y rutina</h3><p>Tres pruebas para hacer antes de confiar y un checklist de 2 minutos por día y 10 por semana. Ajustas una regla a la vez.</p></div>
   </div>
 </div></section>
@@ -169,7 +174,7 @@
 <section id="fluxo"><div class="wrap">
   <span class="chip">Cómo funciona</span>
   <h2>Siete agentes, en orden de montaje</h2>
-  <p class="sub">Empieza por el trabajo que más te quita tiempo en la semana. El Cerebro y el Jefe de Gabinete entran al final, cuando ya existen agentes para coordinar.</p>
+  <p class="sub">Empieza por el trabajo que más te consume la semana. El Cerebro y el Jefe de Gabinete entran al final, cuando ya existen agentes que coordinar.</p>
   <div class="flow">
     <span>🛡️ Escudo</span><span class="arr">→</span>
     <span>🔍 Verificación</span><span class="arr">→</span>
@@ -182,7 +187,7 @@
   <h3 style="margin:2.2em 0 .8em">Cuándo crear un bot nuevo (y cuándo no)</h3>
   <p class="sub" style="margin-bottom:1.2em">Más bots no es mejor: seis bots son seis conversaciones que seguir. Crea un bot separado solo si necesita al menos una de estas tres cosas. Si no la necesita, pídeselo directamente al Jefe de Gabinete.</p>
   <div class="grid g3">
-    <div class="card"><h3>🗂️ Memoria propia</h3><p>Sus notas desordenarían las de otro bot (ej.: el historial de proveedores del Negociador).</p></div>
+    <div class="card"><h3>🗂️ Memoria propia</h3><p>Sus anotaciones desordenarían las de otro bot (ej.: el historial de proveedores del Negociador).</p></div>
     <div class="card"><h3>🔑 Permiso distinto</h3><p>Necesita leer y el otro escribir, o uno puede gastar y el otro no (ej.: el Financiero solo lee).</p></div>
     <div class="card"><h3>⏰ Reloj propio</h3><p>Corre en un horario o disparador tuyo (ej.: el Escudo a las 7h, el resumen del Jefe a las 8h).</p></div>
   </div>
@@ -193,10 +198,26 @@
   <h2>Qué necesitas</h2>
   <p class="sub">Ningún conocimiento técnico. Si puedes escribir un mensaje, puedes montar estos agentes.</p>
   <div class="grid g3">
-    <div class="card"><h3>GrokBot</h3><p>Una cuenta en GrokBot (xAI). Tiene una cuota de uso semanal: las rutinas mal configuradas gastan la cuota rápido, y el agente Financiero ayuda a vigilar eso.</p></div>
-    <div class="card"><h3>Tus aplicaciones</h3><p>Conecta en GrokBot lo que pide cada ficha: Gmail u Outlook, carpeta de contratos, banco en modo lectura. Para conectar cualquier servicio, pregunta: <code>"Quiero conectar con [servicio]. ¿Qué necesitas?"</code></p></div>
+    <div class="card"><h3>GrokBot</h3><p>Una cuenta en GrokBot (xAI). Tiene una cuota de uso semanal: las rutinas mal configuradas gastan la cuota rápido, y el agente Financiero ayuda a vigilarlo.</p></div>
+    <div class="card"><h3>Tus aplicaciones</h3><p>Conecta en GrokBot lo que pide cada ficha: Gmail u Outlook, carpeta de contratos, banco en modo lectura. Para conectar cualquier servicio, pregunta: <code>"Quiero conectarme a [servicio]. ¿Qué necesitas?"</code></p></div>
     <div class="card"><h3>Herramientas opcionales</h3><p>Solo para algunos agentes: una herramienta de programación de posts con DM automático (Redes), una billetera con límite de gasto (Negociador) y una base de datos (Cerebro). Los nombres usados como ejemplo están en cada ficha.</p></div>
   </div>
+</div></section>
+
+<section id="glossario"><div class="wrap">
+  <span class="chip">Palabras que aparecen en las fichas</span>
+  <h2>Glosario rápido</h2>
+  <p class="sub">Si alguna palabra de las fichas es nueva, está aquí.</p>
+  <dl class="gl">
+    <dt>X</dt><dd>La red social antes llamada Twitter. GrokBot es de la misma empresa (xAI) y lee X directamente.</dd>
+    <dt>DM</dt><dd>Mensaje directo, en privado, en una red social.</dd>
+    <dt>Clave de API</dt><dd>Una contraseña larga que un servicio te da para que otro programa (aquí, GrokBot) use tu cuenta. Trátala como una contraseña: pégala solo en el campo seguro que abre GrokBot.</dd>
+    <dt>Base de datos</dt><dd>Un archivo organizado en internet donde se guardan notas, tablas y textos, para buscarlos después. El Cerebro usa una.</dd>
+    <dt>Cuota semanal</dt><dd>El límite de uso que tu plan de GrokBot da por semana. Una rutina corriendo sin necesidad gasta la cuota; el Financiero muestra cuánto consume cada bot.</dd>
+    <dt>Conectar una app</dt><dd>Darle a GrokBot permiso para leer (o modificar) una cuenta tuya, como Gmail o el banco. Tú autorizas en la pantalla del propio servicio.</dd>
+    <dt>Fuero</dt><dd>La ciudad donde se juzgaría un proceso si hay una disputa sobre el contrato.</dd>
+    <dt>Nivel N0 a N4</dt><dd>Cuánto puede hacer el agente solo, de "solo mira" a "lleva un proceso completo". Mira la sección Niveles.</dd>
+  </dl>
 </div></section>
 
 <section id="guia"><div class="wrap">
@@ -205,7 +226,7 @@
   <p class="sub">El mismo camino vale para los siete. Haz uno, déjalo correr una semana, luego haz el siguiente.</p>
 
   <div class="step"><div class="b">1</div><div>
-    <h3>Elige el trabajo que más te quita tiempo en la semana</h3>
+    <h3>Elige el trabajo que más te consume la semana</h3>
     <p>No empieces por los siete. Elige uno: correo (Escudo), contratos (Verificación), redes (Redes), presupuestos (Negociador) o gastos (Financiero).</p>
   </div></div>
 
@@ -230,17 +251,20 @@
 
   <div class="step"><div class="b">5</div><div>
     <h3>Haz las 3 pruebas antes de confiar</h3>
-    <p>Toda ficha trae tres pruebas: información faltante, pedido prohibido y alarma. Si el bot falla alguna, ajusta la regla en la instrucción y vuelve a probar.</p>
+    <p>Toda ficha trae tres pruebas: información faltante, pedido prohibido y alarma. Si el bot falla alguna, ajusta la regla en la instrucción y prueba de nuevo.</p>
   </div></div>
 
   <div class="step"><div class="b">6</div><div>
     <h3>Haz seguimiento 2 minutos por día</h3>
-    <p>Lee el informe, aprueba lo que esté esperando tu OK. Una vez por semana, ajusta una sola regla. Anota lo que falló en la tabla "Registro de fallas" de la ficha.</p>
+    <p>Lee el informe, aprueba lo que esté esperando tu OK. Una vez por semana, ajusta una sola regla: abre la conversación del bot en GrokBot y dile el cambio. Anota lo que falló en una hoja de cálculo o cuaderno tuyo, copiando la tabla "Registro de fallas" del final de la ficha.</p>
+<pre><span class="k">Cambia una regla: el correo de la Agencia Tributaria siempre va a la lista de revisión, nunca a la bandeja de entrada.</span></pre>
   </div></div>
 
   <div class="step"><div class="b">7</div><div>
     <h3>Activa el Cerebro y el Jefe de Gabinete</h3>
-    <p>Con dos o más agentes funcionando, monta el Cerebro (memoria que usan todos los bots) y después el Jefe de Gabinete (un resumen a las 8h con todo lo que te necesita).</p>
+    <p>Con dos o más agentes corriendo, monta el Cerebro (una base de datos que se vuelve la memoria de todos) y después el Jefe de Gabinete (un resumen a las 8h con todo lo que te necesita). La base de datos es el punto de encuentro: las instrucciones ya le piden a cada bot guardar allí su propio informe, y el Jefe lo lee de allí. Conecta la misma base de datos en cada bot.</p>
+<pre><span class="c"># en cada bot que ya existía antes del Cerebro</span>
+<span class="k">Conéctate a la misma base de datos del Cerebro y guarda allí cada informe como "informe del Escudo", con la fecha.</span></pre>
   </div></div>
 </div></section>
 
@@ -251,8 +275,8 @@
 
   <div class="ag" id="escudo">
     <div class="top"><h3>🛡️ Escudo</h3><span class="lv">N2 · prepara, tú apruebas</span></div>
-    <p>Lee tu bandeja y el spam todos los días, rescata el buen correo que cayó en la papelera, señala estafas (como cambio de datos bancarios) y encuentra tu teléfono en sitios de búsqueda de personas.</p>
-    <p class="meta"><b>Cuándo corre:</b> todos los días a las 7h · <b>Conectar:</b> Gmail y/u Outlook · <b>Nunca:</b> borra correos, hace clic en enlaces sospechosos ni envía solicitudes de eliminación sin tu OK.</p>
+    <p>Lee tu bandeja y el spam todos los días, rescata correos buenos que cayeron en la basura, señala estafas (como cambio de datos bancarios) y encuentra tu teléfono en sitios de búsqueda de personas.</p>
+    <p class="meta"><b>Cuándo corre:</b> todos los días a las 7h · <b>Conectar:</b> Gmail y/u Outlook · <b>Nunca:</b> borra correos, hace clic en enlaces sospechosos ni envía pedidos de eliminación sin tu OK.</p>
     <details><summary>Ver instrucción lista</summary><!--PROMPT:01--></details>
     <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/es/01-escudo.md" target="_blank" rel="noopener">Ficha completa →</a></p>
   </div>
@@ -268,14 +292,14 @@
   <div class="ag" id="redes">
     <div class="top"><h3>📱 Redes</h3><span class="lv">N2 · prepara, tú apruebas</span></div>
     <p>Investiga tendencias en X, prepara posts con tu voz y arma el DM automático por palabra clave: comentario → seguir → correo → enlace. El cliente viene de la conversación, no solo del post.</p>
-    <p class="meta"><b>Cuándo corre:</b> todas las mañanas y bajo pedido · <b>Conectar:</b> herramienta de programación con DM automático (clave de API) · <b>Nunca:</b> publica sin OK, responde polémicas ni habla de precios.</p>
+    <p class="meta"><b>Cuándo corre:</b> cada mañana y bajo pedido · <b>Conectar:</b> herramienta de programación con DM automático (clave de API) · <b>Nunca:</b> publica sin OK, responde polémicas ni habla de precios.</p>
     <details><summary>Ver instrucción lista</summary><!--PROMPT:03--></details>
     <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/es/03-redes.md" target="_blank" rel="noopener">Ficha completa →</a></p>
   </div>
 
   <div class="ag" id="negociador">
     <div class="top"><h3>💸 Negociador</h3><span class="lv">N2 · prepara, tú apruebas</span></div>
-    <p>Encuentra proveedores, pide presupuesto desde una casilla de correo exclusiva suya, compara al menos 3 propuestas y regatea. Compra solo con tu OK y dentro del límite que le des.</p>
+    <p>Encuentra proveedores, pide presupuesto desde una casilla de correo solo suya, compara al menos 3 propuestas y regatea. Compra solo con tu OK y dentro del límite que le des.</p>
     <p class="meta"><b>Cuándo corre:</b> cuando lo pidas · <b>Conectar:</b> correo propio del bot y, si quieres, una billetera con límite · <b>Nunca:</b> se pasa del presupuesto, firma ni paga por adelantado.</p>
     <details><summary>Ver instrucción lista</summary><!--PROMPT:04--></details>
     <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/es/04-negociador.md" target="_blank" rel="noopener">Ficha completa →</a></p>
@@ -291,7 +315,7 @@
 
   <div class="ag" id="cerebro">
     <div class="top"><h3>🧠 Cerebro</h3><span class="lv">N3 · ejecuta</span></div>
-    <p>La memoria del equipo. La memoria de cada bot de GrokBot es un resumen que queda solo con él; el Cerebro guarda todo palabra por palabra en una base de datos que todos los bots consultan. Solo él escribe.</p>
+    <p>La memoria del equipo. La memoria de cada bot de GrokBot es un resumen que se queda solo con él; el Cerebro guarda todo palabra por palabra en una base de datos que todos los bots consultan. Los otros bots solo agregan informes; organizar y borrar es cosa suya.</p>
     <p class="meta"><b>Cuándo corre:</b> bajo pedido · <b>Conectar:</b> una base de datos (el ejemplo de la ficha tiene plan gratis) · <b>Nunca:</b> guarda contraseñas, tarjetas ni documentos.</p>
     <details><summary>Ver instrucción lista</summary><!--PROMPT:06--></details>
     <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/es/06-cerebro.md" target="_blank" rel="noopener">Ficha completa →</a></p>
@@ -300,7 +324,7 @@
   <div class="ag" id="chefe">
     <div class="top"><h3>🤝 Jefe de Gabinete</h3><span class="lv">N3 · ejecuta</span></div>
     <p>Tu único punto de contacto: lee los informes de todos, distribuye tareas y te entrega a las 8h lo que te necesita, lo que quedó listo y lo que se trabó. No aprueba nada en tu lugar.</p>
-    <p class="meta"><b>Cuándo corre:</b> todos los días a las 8h y siempre que hables con él · <b>Conectar:</b> los otros bots y el Cerebro · <b>Nunca:</b> gasta dinero ni habla con gente de fuera.</p>
+    <p class="meta"><b>Cuándo corre:</b> todos los días a las 8h y siempre que le hables · <b>Conectar:</b> los otros bots y el Cerebro · <b>Nunca:</b> gasta dinero ni habla con gente de afuera.</p>
     <details><summary>Ver instrucción lista</summary><!--PROMPT:07--></details>
     <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/es/07-chefe-de-gabinete.md" target="_blank" rel="noopener">Ficha completa →</a></p>
   </div>
@@ -309,13 +333,13 @@
 <section id="niveis"><div class="wrap">
   <span class="chip">Niveles de autonomía</span>
   <h2>Cuánto puede hacer cada agente solo</h2>
-  <p class="sub">El nivel sale de una regla fija: si involucra dinero, algo que no se puede deshacer o gente de fuera, el agente prepara y tú apruebas. En caso de duda, el nivel menor.</p>
+  <p class="sub">El nivel sale de una regla fija: si hay dinero, algo que no se puede deshacer o gente de afuera, el agente prepara y tú apruebas. Ante la duda, el nivel menor.</p>
   <div class="phase"><div class="tag">N0</div><div class="d"><strong>Solo consulta</strong><span>Lee y cuenta, no toca nada. Financiero.</span></div></div>
   <div class="phase"><div class="tag">N1</div><div class="d"><strong>Investiga y prepara</strong><span>Entrega un dictamen o borrador; la decisión es tuya. Verificación.</span></div></div>
   <div class="phase"><div class="tag">N2</div><div class="d"><strong>Prepara, tú apruebas</strong><span>Deja todo listo, pero nada sale sin tu OK. Escudo, Redes, Negociador.</span></div></div>
   <div class="phase"><div class="tag">N3</div><div class="d"><strong>Ejecuta</strong><span>Hace solo lo que es interno y se puede deshacer. Cerebro, Jefe de Gabinete.</span></div></div>
   <div class="phase"><div class="tag">N4</div><div class="d"><strong>Lleva un proceso completo</strong><span>Solo después de 2 meses de informes limpios. Ningún agente del kit empieza aquí.</span></div></div>
-  <p class="note" style="margin-top:1.6em">Para subir de nivel, cada ficha indica la condición (ej.: 4 semanas aprobando sin corregir). El agente propone, tú decides. Las fichas las escribió INEMA a partir de una clase pública sobre agentes en GrokBot; haz las 3 pruebas en tu GrokBot antes de confiar.</p>
+  <p class="note" style="margin-top:1.6em">Para subir de nivel, cada ficha dice la condición (ej.: 4 semanas aprobando sin corregir). El agente propone, tú decides. Las fichas fueron escritas por INEMA a partir de una <a href="https://www.youtube.com/watch?v=2Vscrsz89MY" target="_blank" rel="noopener">clase pública sobre agentes en GrokBot</a> (en inglés), la "clase de referencia" citada en las fichas. No son los textos de la clase. Haz las 3 pruebas en tu GrokBot antes de confiar.</p>
 </div></section>
 
 <footer>

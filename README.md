@@ -36,9 +36,9 @@ Quem faz: 🧑 você · ⚙️ o GrokBot sozinho, no horário · 🤖 o agente, 
 4. 🧑 **Conecte os aplicativos** que a ficha pede (`"Quero conectar ao [serviço]. O que você precisa?"`). Chave de API vai no campo seguro do GrokBot.
 5. 🧑 **Rode os 3 testes** da ficha (informação faltando, pedido proibido, alarme). Errou? Ajuste a regra e teste de novo.
 6. ⚙️ **O agente roda no horário** da ficha (Escudo 7h, Chefe 8h, Financeiro com painel na segunda) e 🤖 sob pedido.
-7. 🧑 **2 minutos por dia:** leia o relatório e aprove o que espera seu OK. **10 minutos por semana:** ajuste uma regra só e anote no "Registro de falhas" da ficha.
+7. 🧑 **2 minutos por dia:** leia o relatório e aprove o que espera seu OK. **10 minutos por semana:** ajuste uma regra só (na conversa do bot: *"Mude uma regra: ..."*) e anote o que quebrou numa planilha sua, copiando a tabela "Registro de falhas" da ficha.
 8. 🧑 **Repita do passo 1** com o próximo agente, uma semana depois.
-9. 🧑 **Com 2+ agentes rodando, monte o Cérebro** (memória comum) e depois **o Chefe de Gabinete** (coordena e resume).
+9. 🧑 **Com 2+ agentes rodando, monte o Cérebro** (um banco de dados que vira a memória comum) e **conecte o mesmo banco em cada bot**: as instruções já mandam cada um guardar ali o próprio relatório. Depois monte **o Chefe de Gabinete**, que lê esses relatórios e te resume às 8h.
 10. 🧑 **Todo mês:** confira se o nível de cada agente ainda é o certo; suba só quando a ficha disser que pode.
 
 ## Regra dos 3 motivos
@@ -47,7 +47,7 @@ Crie um bot separado só se ele precisar de **memória própria**, **permissão 
 
 ## Avisos
 
-- As fichas foram escritas pelo INEMA a partir de uma aula pública sobre agentes no GrokBot. Não são os textos originais da aula.
+- As fichas foram escritas pelo INEMA a partir de uma [aula pública sobre agentes no GrokBot](https://www.youtube.com/watch?v=2Vscrsz89MY) (em inglês), a "aula de referência" citada nas fichas. Não são os textos originais da aula.
 - Não foram testadas por nós em todas as contas e planos do GrokBot: **rode os 3 testes no seu antes de confiar**.
 - Ferramentas citadas nas fichas (agendador de posts, carteira, banco de dados) são exemplos, não exigência. Nenhuma tem vínculo com o INEMA.
 - Tudo que mexe com dinheiro ou fala com gente de fora começa no nível N2: **nada sai sem o seu OK**.

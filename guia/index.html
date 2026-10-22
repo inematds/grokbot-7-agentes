@@ -88,6 +88,11 @@
   .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
   .step h3{font-size:1.12rem;margin-bottom:.3em}
   .step p{color:var(--mut);margin:.2em 0 .7em}
+  .step pre{white-space:pre-wrap;overflow-wrap:anywhere}
+  dl.gl{display:grid;grid-template-columns:minmax(120px,200px) 1fr;gap:10px 18px;margin:0}
+  dl.gl dt{font-family:Sora;font-weight:600}
+  dl.gl dd{margin:0;color:var(--mut)}
+  @media(max-width:540px){dl.gl{grid-template-columns:1fr} dl.gl dd{margin-bottom:8px}}
   .phase{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
   .phase:last-child{border:none}
   .phase .tag{flex:0 0 92px;font-family:Sora;font-weight:800;color:var(--amb)}
@@ -199,6 +204,22 @@
   </div>
 </div></section>
 
+<section id="glossario"><div class="wrap">
+  <span class="chip">Palavras que aparecem nas fichas</span>
+  <h2>Glossário rápido</h2>
+  <p class="sub">Se alguma palavra das fichas for nova, ela está aqui.</p>
+  <dl class="gl">
+    <dt>X</dt><dd>A rede social antes chamada Twitter. O GrokBot é da mesma empresa (xAI) e lê o X direto.</dd>
+    <dt>DM</dt><dd>Mensagem direta, no privado, numa rede social.</dd>
+    <dt>Chave de API</dt><dd>Uma senha comprida que um serviço te dá para outro programa (aqui, o GrokBot) usar sua conta. Trate como senha: cole só no campo seguro que o GrokBot abre.</dd>
+    <dt>Banco de dados</dt><dd>Um arquivo organizado na internet onde ficam guardadas notas, tabelas e textos, para buscar depois. O Cérebro usa um.</dd>
+    <dt>Cota semanal</dt><dd>O limite de uso que o seu plano do GrokBot dá por semana. Rotina rodando à toa gasta a cota; o Financeiro mostra quanto cada bot consome.</dd>
+    <dt>Conectar um app</dt><dd>Dar ao GrokBot permissão para ler (ou mexer em) uma conta sua, como Gmail ou banco. Você autoriza na tela do próprio serviço.</dd>
+    <dt>Foro</dt><dd>A cidade onde um processo seria julgado se houver briga sobre o contrato.</dd>
+    <dt>Nível N0 a N4</dt><dd>Quanto o agente pode fazer sozinho, de "só olha" a "toca um processo inteiro". Veja a seção Níveis.</dd>
+  </dl>
+</div></section>
+
 <section id="guia"><div class="wrap">
   <span class="chip">Guia de uso · passo a passo</span>
   <h2>Monte seu primeiro agente em 15 minutos</h2>
@@ -235,12 +256,15 @@
 
   <div class="step"><div class="b">6</div><div>
     <h3>Acompanhe 2 minutos por dia</h3>
-    <p>Leia o relatório, aprove o que estiver esperando seu OK. Uma vez por semana, ajuste uma regra só. Anote o que quebrou na tabela "Registro de falhas" da ficha.</p>
+    <p>Leia o relatório, aprove o que estiver esperando seu OK. Uma vez por semana, ajuste uma regra só: abra a conversa do bot no GrokBot e diga a mudança. Anote o que quebrou numa planilha ou caderno seu, copiando a tabela "Registro de falhas" do fim da ficha.</p>
+<pre><span class="k">Mude uma regra: e-mail da Receita Federal sempre vai para a lista de revisão, nunca para a entrada.</span></pre>
   </div></div>
 
   <div class="step"><div class="b">7</div><div>
     <h3>Ligue o Cérebro e o Chefe de Gabinete</h3>
-    <p>Com dois ou mais agentes rodando, monte o Cérebro (memória que todos os bots usam) e depois o Chefe de Gabinete (um resumo às 8h com tudo que precisa de você).</p>
+    <p>Com dois ou mais agentes rodando, monte o Cérebro (um banco de dados que vira a memória de todos) e depois o Chefe de Gabinete (um resumo às 8h com tudo que precisa de você). O banco é o ponto de encontro: as instruções já mandam cada bot guardar ali o próprio relatório, e o Chefe lê de lá. Conecte o mesmo banco em cada bot.</p>
+<pre><span class="c"># em cada bot que já existia antes do Cérebro</span>
+<span class="k">Conecte ao mesmo banco de dados do Cérebro e guarde lá cada relatório como "relatório do Escudo", com a data.</span></pre>
   </div></div>
 </div></section>
 
@@ -261,7 +285,7 @@ Dados que você vai vigiar:
 
 Todo dia:
 1. Leia minha caixa de entrada e a pasta de spam das contas conectadas.
-2. Tire do spam todo e-mail legítimo (cliente, fornecedor, banco, contrato, pagamento, convite) e mova para a entrada. Na dúvida, resgate e me avise.
+2. Tire do spam todo e-mail legítimo de remetente que eu já conheço (cliente, fornecedor, banco, contrato, pagamento, convite) e mova para a entrada. Remetente desconhecido ou duvidoso, mesmo dizendo ser banco: não resgate nem apague, coloque na lista de revisão.
 3. Sinalize como suspeito qualquer e-mail que peça senha, código, pagamento urgente ou que traga mudança de dados bancários de alguém com quem eu já negocio. Mudança de dados bancários é sempre alerta vermelho.
 4. Pesquise meus telefones em sites de busca de pessoas. Para cada site onde aparecer, prepare o pedido de remoção, mas NÃO envie sem meu OK.
 
@@ -277,6 +301,8 @@ Relatório das 7h, curto, uma linha por item:
 - Golpes sinalizados (motivo)
 - Sites com meu número + pedidos de remoção esperando OK
 - Erros ou dúvidas da última execução
+
+Quando o Cérebro estiver montado (banco de dados conectado), guarde cada relatório lá como "relatório do Escudo", com a data. É por lá que o Chefe de Gabinete vai ler o que você fez.
 
 Antes de começar, confirme em 3 linhas o que entendeu.</pre><button class="cp" type="button" data-ok="Copiado!">Copiar</button></details>
     <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/01-escudo.md" target="_blank" rel="noopener">Ficha completa →</a></p>
@@ -312,6 +338,8 @@ Formato do parecer:
 - Perguntas para eu fazer antes de assinar
 - Risco: baixo, médio ou alto, e por quê
 
+Quando o Cérebro estiver montado (banco de dados conectado), guarde cada relatório lá como "relatório do Checagem", com a data. É por lá que o Chefe de Gabinete vai ler o que você fez.
+
 Antes de começar, confirme em 3 linhas o que entendeu.</pre><button class="cp" type="button" data-ok="Copiado!">Copiar</button></details>
     <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/02-checagem.md" target="_blank" rel="noopener">Ficha completa →</a></p>
   </div>
@@ -339,6 +367,8 @@ Pare e me chame se aparecer: comentário negativo ou polêmica, pedido de parcer
 
 Relatório diário: tendências, posts esperando aprovação, automações ativas e quantos e-mails cada uma trouxe.
 
+Quando o Cérebro estiver montado (banco de dados conectado), guarde cada relatório lá como "relatório do Redes", com a data. É por lá que o Chefe de Gabinete vai ler o que você fez.
+
 Antes de começar, confirme em 3 linhas o que entendeu.</pre><button class="cp" type="button" data-ok="Copiado!">Copiar</button></details>
     <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/03-redes.md" target="_blank" rel="noopener">Ficha completa →</a></p>
   </div>
@@ -352,7 +382,7 @@ Antes de começar, confirme em 3 linhas o que entendeu.</pre><button class="cp" 
 Quando eu disser o que preciso, você:
 1. Encontra pelo menos 5 fornecedores na minha região ou online.
 2. Escreve um pedido de orçamento claro para cada um e me mostra antes de enviar.
-3. Depois do meu OK, envia pela sua caixa, acompanha as respostas e negocia com educação e firmeza para baixar o preço ou melhorar as condições.
+3. Depois do meu OK, envia pela sua caixa e acompanha as respostas. Para negociar, a cada contraproposta ou resposta nova me mostre o que pretende responder e só envie depois do meu OK. Seja educado e firme para baixar o preço ou melhorar as condições.
 4. Me entrega uma tabela: fornecedor, preço inicial, preço negociado, prazo, condições e sua recomendação.
 
 Regras:
@@ -365,6 +395,8 @@ Regras:
 Pare e me chame se: pedirem pagamento adiantado, o preço passar do limite, aparecer condição estranha, ou um fornecedor parecer golpe.
 
 Pedido de hoje: [O QUE VOCÊ PRECISA]
+
+Quando o Cérebro estiver montado (banco de dados conectado), guarde cada relatório lá como "relatório do Negociador", com a data. É por lá que o Chefe de Gabinete vai ler o que você fez.
 
 Antes de começar, confirme em 3 linhas o que entendeu.</pre><button class="cp" type="button" data-ok="Copiado!">Copiar</button></details>
     <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/04-negociador.md" target="_blank" rel="noopener">Ficha completa →</a></p>
@@ -391,18 +423,20 @@ Regras:
 
 Pare e me chame na hora se aparecer: cobrança que eu não reconheço, valor muito acima do normal, cobrança em dobro ou sinal de fraude.
 
+Quando o Cérebro estiver montado (banco de dados conectado), guarde cada relatório lá como "relatório do Financeiro", com a data. É por lá que o Chefe de Gabinete vai ler o que você fez.
+
 Antes de começar, confirme em 3 linhas o que entendeu.</pre><button class="cp" type="button" data-ok="Copiado!">Copiar</button></details>
     <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/05-financeiro.md" target="_blank" rel="noopener">Ficha completa →</a></p>
   </div>
 
   <div class="ag" id="cerebro">
     <div class="top"><h3>🧠 Cérebro</h3><span class="lv">N3 · executa</span></div>
-    <p>A memória da equipe. A memória de cada bot do GrokBot é um resumo que fica só com ele; o Cérebro guarda tudo palavra por palavra num banco de dados que todos os bots consultam. Só ele escreve.</p>
+    <p>A memória da equipe. A memória de cada bot do GrokBot é um resumo que fica só com ele; o Cérebro guarda tudo palavra por palavra num banco de dados que todos os bots consultam. Os outros bots só acrescentam relatórios; organizar e apagar é com ele.</p>
     <p class="meta"><b>Quando roda:</b> sob pedido · <b>Conectar:</b> um banco de dados (o exemplo da ficha tem plano grátis) · <b>Nunca:</b> guarda senha, cartão ou documento.</p>
     <details><summary>Ver instrução pronta</summary><pre>Quero criar um bot chamado "Cérebro". Você é a memória compartilhada da minha equipe de bots, guardada no banco de dados conectado: [MONGODB OU OUTRO].
 
 Como funciona:
-- Você é o ÚNICO que escreve na memória. Os outros bots (Escudo, Checagem, Redes, Negociador, Financeiro, Chefe de Gabinete) pedem para você guardar ou buscar.
+- Só você organiza, corrige e apaga a memória. Os outros bots (Escudo, Checagem, Redes, Negociador, Financeiro, Chefe de Gabinete) apenas acrescentam os próprios relatórios, com o nome do bot e a data. Mantenha esses relatórios organizados por bot e por data.
 - Guarde exatamente como veio (contrato, transcrição, tabela). Não resuma na hora de guardar.
 - Toda nota leva: data, origem (qual bot ou pessoa), assunto e etiquetas.
 - Busque de dois jeitos: exato (data, nome, número) e por sentido (perguntas abertas). Sempre diga de qual nota tirou a resposta.
@@ -429,17 +463,17 @@ Antes de começar, confirme em 3 linhas o que entendeu.</pre><button class="cp" 
     <div class="top"><h3>🤝 Chefe de Gabinete</h3><span class="lv">N3 · executa</span></div>
     <p>Seu único ponto de contato: lê os relatórios de todos, distribui tarefas e te entrega às 8h o que precisa de você, o que ficou pronto e o que travou. Não aprova nada no seu lugar.</p>
     <p class="meta"><b>Quando roda:</b> todo dia às 8h e sempre que você falar com ele · <b>Conectar:</b> os outros bots e o Cérebro · <b>Nunca:</b> gasta dinheiro ou fala com gente de fora.</p>
-    <details><summary>Ver instrução pronta</summary><pre>Quero criar um bot chamado "Chefe de Gabinete". Você coordena minha equipe de bots: Escudo, Checagem, Redes, Negociador, Financeiro e Cérebro. Eu falo com você; você fala com eles.
+    <details><summary>Ver instrução pronta</summary><pre>Quero criar um bot chamado "Chefe de Gabinete". Você coordena minha equipe de bots: Escudo, Checagem, Redes, Negociador, Financeiro e Cérebro. Eu falo com você. Você lê o que eles fizeram nos relatórios que cada um guarda no Cérebro (banco de dados conectado).
 
 Todo dia às 8h, me entregue um resumo curto, em ordem de urgência:
 1. O que precisa de mim hoje (aprovações, decisões)
 2. O que ficou pronto
 3. O que está em andamento
 4. O que travou e por quê
-5. Custo da semana (peça ao Financeiro)
+5. Custo da semana (do relatório do Financeiro)
 
 Quando eu pedir algo:
-- Decida qual bot faz e passe a tarefa. Se nenhum precisar de memória, permissão ou horário próprios, faça você mesmo.
+- Decida qual bot faz. Se você conseguir acionar o outro bot direto, passe a tarefa. Se não, me diga em qual bot colar e o pedido pronto para eu colar lá. Se nenhum precisar de memória, permissão ou horário próprios, faça você mesmo.
 - Para guardar ou buscar informação, use o Cérebro.
 
 Regra para criar bot novo: só sugira criar se ele precisar de memória própria, de permissão diferente ou de horário próprio. Senão, fica com você.
@@ -465,7 +499,7 @@ Antes de começar, confirme em 3 linhas o que entendeu.</pre><button class="cp" 
   <div class="phase"><div class="tag">N2</div><div class="d"><strong>Prepara, você aprova</strong><span>Deixa tudo pronto, mas nada sai sem o seu OK. Escudo, Redes, Negociador.</span></div></div>
   <div class="phase"><div class="tag">N3</div><div class="d"><strong>Executa</strong><span>Faz sozinho o que é interno e dá para desfazer. Cérebro, Chefe de Gabinete.</span></div></div>
   <div class="phase"><div class="tag">N4</div><div class="d"><strong>Toca um processo inteiro</strong><span>Só depois de 2 meses de relatórios limpos. Nenhum agente do kit começa aqui.</span></div></div>
-  <p class="note" style="margin-top:1.6em">Para subir de nível, cada ficha diz a condição (ex.: 4 semanas aprovando sem corrigir). O agente propõe, você decide. As fichas foram escritas pelo INEMA a partir de uma aula pública sobre agentes no GrokBot; rode os 3 testes no seu GrokBot antes de confiar.</p>
+  <p class="note" style="margin-top:1.6em">Para subir de nível, cada ficha diz a condição (ex.: 4 semanas aprovando sem corrigir). O agente propõe, você decide. As fichas foram escritas pelo INEMA a partir de uma <a href="https://www.youtube.com/watch?v=2Vscrsz89MY" target="_blank" rel="noopener">aula pública sobre agentes no GrokBot</a> (em inglês), a "aula de referência" citada nas fichas. Não são os textos da aula. Rode os 3 testes no seu GrokBot antes de confiar.</p>
 </div></section>
 
 <footer>

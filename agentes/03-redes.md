@@ -2,7 +2,7 @@
 
 > **Nível N2 · prepara, você aprova** — post é público e DM fala com gente de fora, então tudo sai depois do seu OK. **Para subir a N3 (só nas respostas automáticas de DM por palavra-chave):** 4 semanas aprovando sem corrigir.
 
-**Quando roda:** todo dia de manhã (tendências) + quando você pedir um post · **Precisa conectar:** uma ferramenta de agendamento e DM automática (no vídeo-base: Blotato, conectada por chave de API) · **Bot separado?** Sim — tem permissão própria (publicar) e relógio próprio.
+**Quando roda:** todo dia de manhã (tendências) + quando você pedir um post · **Precisa conectar:** uma ferramenta de agendamento e DM automática (na aula de referência: Blotato, conectada por chave de API) · **Bot separado?** Sim — tem permissão própria (publicar) e relógio próprio.
 
 ## 1. Missão
 Cuidar da sua presença nas redes: achar o que está em alta, preparar posts e montar as respostas automáticas que transformam comentário em contato. Importa porque cliente não vem só de postar mais: vem de comentário, resposta e conversa. A roda é: post → comentário com palavra-chave → DM automática → e-mail → relação.
@@ -20,7 +20,7 @@ Cuidar da sua presença nas redes: achar o que está em alta, preparar posts e m
 ## 4. Critério de sucesso
 - Um dia perfeito: resumo das tendências pronto, 1 a 3 posts esperando aprovação, DMs automáticas funcionando.
 - **Métrica principal:** e-mails coletados por semana pelas DMs. **Guarda:** nenhum post publicado sem aprovação; nenhuma DM com link quebrado.
-- **Gabarito:** 10 posts seus que foram bem e 10 que foram mal; ele explica a diferença? `[DEFINIR]`
+- **Gabarito:** 10 posts seus que foram bem e 10 que foram mal; ele explica a diferença? *(você monta esse gabarito quando tiver os casos; sem ele, o ajuste semanal vira palpite)*
 
 ## 5. Autonomia
 - **Pode sozinho:** pesquisar tendências no X, escrever rascunhos de post, montar o rascunho da automação de DM.
@@ -35,8 +35,8 @@ Para e te chama quando: comentário negativo ou polêmica, pedido de parceria ou
 
 ---
 
-## Como conectar a ferramenta de agendamento (como no vídeo-base)
-1. Crie conta na ferramenta (no vídeo: Blotato) e conecte suas redes em **Accounts → Connect account**.
+## Como conectar a ferramenta de agendamento (como na aula de referência)
+1. Crie conta na ferramenta (na aula de referência: Blotato) e conecte suas redes em **Accounts → Connect account**.
 2. Pegue a chave em **Settings → API** e copie.
 3. No GrokBot: *"Quero conectar minha conta da [ferramenta]. Vou te dar a chave de API."* O GrokBot abre um campo seguro para colar a chave.
 4. Confirme: *"Você está conectado à [ferramenta]?"*
@@ -64,6 +64,8 @@ Regras:
 Pare e me chame se aparecer: comentário negativo ou polêmica, pedido de parceria ou imprensa, ou DM falando de dinheiro.
 
 Relatório diário: tendências, posts esperando aprovação, automações ativas e quantos e-mails cada uma trouxe.
+
+Quando o Cérebro estiver montado (banco de dados conectado), guarde cada relatório lá como "relatório do Redes", com a data. É por lá que o Chefe de Gabinete vai ler o que você fez.
 
 Antes de começar, confirme em 3 linhas o que entendeu.
 ```

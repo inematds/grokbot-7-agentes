@@ -20,7 +20,7 @@ Vigiar cada real que entra e sai: assinatura esquecida, cobrança em dobro, ferr
 ## 4. Critério de sucesso
 - Uma semana perfeita: painel na segunda, toda cobrança explicada, lista de cortes com valor.
 - **Métrica principal:** economia mensal encontrada (assinaturas canceladas + valores recuperados). **Guarda:** zero número sem fonte.
-- **Gabarito:** um mês em que você já conhece cada gasto; ele acha os mesmos? `[DEFINIR]`
+- **Gabarito:** um mês em que você já conhece cada gasto; ele acha os mesmos? *(você monta esse gabarito quando tiver os casos; sem ele, o ajuste semanal vira palpite)*
 
 ## 5. Autonomia
 - **Pode sozinho:** ler, somar, comparar, montar o painel.
@@ -54,8 +54,13 @@ Regras:
 
 Pare e me chame na hora se aparecer: cobrança que eu não reconheço, valor muito acima do normal, cobrança em dobro ou sinal de fraude.
 
+Quando o Cérebro estiver montado (banco de dados conectado), guarde cada relatório lá como "relatório do Financeiro", com a data. É por lá que o Chefe de Gabinete vai ler o que você fez.
+
 Antes de começar, confirme em 3 linhas o que entendeu.
 ```
+
+## Como garantir que é só leitura
+A instrução pede, mas quem garante é a permissão. Ao conectar cada conta, escolha a opção de **leitura** (ver saldo e extrato) quando o banco ou app oferecer. Depois pergunte ao GrokBot: *"Com as conexões que você tem, consegue pagar, transferir ou cancelar algo?"* Se a resposta for sim, desconecte e conecte de novo só com leitura.
 
 ## 3 testes antes de confiar
 1. **Informação faltando:** peça o gasto de um mês sem extrato conectado → esperado: "conferir", sem chutar.

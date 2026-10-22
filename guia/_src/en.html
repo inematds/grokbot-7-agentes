@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GrokBot 7 Agents — your AI team in ready-made cards</title>
-<meta name="description" content="Seven agents for GrokBot in the INEMA Agent Card format: a ready-made instruction to paste, autonomy level, 3 tests and a supervision checklist. Shield, Due Diligence, Social, Deal Hunter, CFO, Brain and Chief of Staff.">
+<meta name="description" content="Seven agents for GrokBot in INEMA's Agent Card format: a ready-made instruction to paste, an autonomy level, 3 tests and a supervision checklist. Shield, Due Diligence, Social, Deal Hunter, CFO, Brain and Chief of Staff.">
 <link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/grokbot-7-agentes/guia/">
 <link rel="alternate" hreflang="en" href="https://inematds.github.io/grokbot-7-agentes/guia/en/">
 <link rel="alternate" hreflang="es" href="https://inematds.github.io/grokbot-7-agentes/guia/es/">
@@ -88,6 +88,11 @@
   .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
   .step h3{font-size:1.12rem;margin-bottom:.3em}
   .step p{color:var(--mut);margin:.2em 0 .7em}
+  .step pre{white-space:pre-wrap;overflow-wrap:anywhere}
+  dl.gl{display:grid;grid-template-columns:minmax(120px,200px) 1fr;gap:10px 18px;margin:0}
+  dl.gl dt{font-family:Sora;font-weight:600}
+  dl.gl dd{margin:0;color:var(--mut)}
+  @media(max-width:540px){dl.gl{grid-template-columns:1fr} dl.gl dd{margin-bottom:8px}}
   .phase{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
   .phase:last-child{border:none}
   .phase .tag{flex:0 0 92px;font-family:Sora;font-weight:800;color:var(--amb)}
@@ -142,7 +147,7 @@
       <p class="lead">Ready-made cards to paste into GrokBot, with clear limits on what each agent can do on its own.</p>
       <div class="cta">
         <a class="btn" href="#guia">Start the guide</a>
-        <a class="btn ghost" href="https://github.com/inematds/grokbot-7-agentes" target="_blank" rel="noopener">View on GitHub</a>
+        <a class="btn ghost" href="https://github.com/inematds/grokbot-7-agentes" target="_blank" rel="noopener">See on GitHub</a>
       </div>
     </div>
     <figure><img src="../assets/banner-en.jpg" alt="Banner: 7 GrokBot agents, an AI team that works while you live your life"></figure>
@@ -151,17 +156,17 @@
 
 <section id="resumo" class="resumo"><div class="wrap">
   <span class="chip">In short</span>
-  <p>It's a kit with seven ready-made agents for people who use GrokBot, xAI's agent assistant. Each agent comes on a card: a text to paste into GrokBot, what it can and can't do on its own, three tests to run before you trust it, and a short follow-up routine. Together, they watch your email, check contracts, take care of your social media, ask for quotes, look at your finances, keep the team's memory and coordinate everything. To use it, all you need is GrokBot and to connect the apps each card lists.</p>
+  <p>This is a kit with seven ready-made agents for people who use GrokBot, xAI's agent assistant. Each agent comes on a card: a text to paste into GrokBot, what it can and can't do on its own, three tests to run before you trust it, and a short follow-up routine. Together, they watch your email, check contracts, look after your social accounts, ask for quotes, review your finances, keep the team's memory and coordinate everything. To use it, all you need is GrokBot and to connect the apps each card lists.</p>
 </div></section>
 
 <section id="oque"><div class="wrap">
   <span class="chip">What it is</span>
   <h2>From a loose bot to a team with rules</h2>
-  <p class="sub">Creating a bot is easy. The hard part is getting it to do the right thing without you watching it all the time. That's why each agent comes in the INEMA <a href="https://inematds.github.io/7pa/" target="_blank" rel="noopener">Agent Card</a> format.</p>
+  <p class="sub">Creating a bot is easy. The hard part is getting it to do the right thing without you watching all the time. That's why each agent comes in INEMA's <a href="https://inematds.github.io/7pa/" target="_blank" rel="noopener">Agent Card</a> format.</p>
   <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="../assets/banner-grade-en.jpg" alt="The agents in the kit: anti-spam shield, due diligence, social media, deal hunter, CFO and shared brain" loading="lazy" style="width:100%;display:block"></figure>
   <div class="grid g3">
-    <div class="card"><h3>📋 Ready-made instruction</h3><p>A text in plain language to paste into GrokBot. You only fill in what's between [brackets]: your emails, your topic, your budget.</p></div>
-    <div class="card"><h3>🚦 Autonomy level</h3><p>Each agent has a level from N0 (read-only) to N4 (runs an entire process). Anything that involves money or talking to outsiders waits for your OK.</p></div>
+    <div class="card"><h3>📋 Ready-made instruction</h3><p>A text to paste into GrokBot. You only fill in what's between [brackets]: your emails, your topic, your budget.</p></div>
+    <div class="card"><h3>🚦 Autonomy level</h3><p>Each agent has a level from N0 (read-only) to N4 (runs a whole process). Anything that involves money or talking to outsiders waits for your OK.</p></div>
     <div class="card"><h3>🧪 Tests and routine</h3><p>Three tests to run before you trust it and a checklist of 2 minutes a day and 10 a week. You adjust one rule at a time.</p></div>
   </div>
 </div></section>
@@ -182,9 +187,9 @@
   <h3 style="margin:2.2em 0 .8em">When to create a new bot (and when not to)</h3>
   <p class="sub" style="margin-bottom:1.2em">More bots isn't better: six bots are six conversations to keep up with. Create a separate bot only if it needs at least one of these three things. If it doesn't, just ask the Chief of Staff directly.</p>
   <div class="grid g3">
-    <div class="card"><h3>🗂️ Its own memory</h3><p>Its notes would clutter another bot's (e.g., the Deal Hunter's supplier history).</p></div>
-    <div class="card"><h3>🔑 A different permission</h3><p>It needs to read while the other writes, or one can spend and the other can't (e.g., the CFO is read-only).</p></div>
-    <div class="card"><h3>⏰ Its own clock</h3><p>It runs on a schedule or trigger of its own (e.g., the Shield at 7 am, the Chief's summary at 8 am).</p></div>
+    <div class="card"><h3>🗂️ Its own memory</h3><p>Its notes would mess up another bot's (e.g., the Deal Hunter's supplier history).</p></div>
+    <div class="card"><h3>🔑 Different permission</h3><p>It needs to read while another writes, or one can spend and the other can't (e.g., the CFO is read-only).</p></div>
+    <div class="card"><h3>⏰ Its own clock</h3><p>It runs on a schedule or trigger of its own (e.g., the Shield at 7am, the Chief's summary at 8am).</p></div>
   </div>
 </div></section>
 
@@ -193,10 +198,26 @@
   <h2>What you need</h2>
   <p class="sub">No technical knowledge. If you can write a message, you can set up these agents.</p>
   <div class="grid g3">
-    <div class="card"><h3>GrokBot</h3><p>A GrokBot (xAI) account. It has a weekly usage quota: poorly configured routines use up the quota quickly, and the CFO agent helps you keep an eye on that.</p></div>
-    <div class="card"><h3>Your apps</h3><p>Connect to GrokBot whatever each card asks for: Gmail or Outlook, a contracts folder, a bank in read-only mode. To connect any service, ask: <code>"I want to connect to [service]. What do you need?"</code></p></div>
-    <div class="card"><h3>Optional tools</h3><p>Only for some agents: a post-scheduling tool with automatic DMs (Social), a wallet with a spending limit (Deal Hunter) and a database (Brain). The names used as examples are on each card.</p></div>
+    <div class="card"><h3>GrokBot</h3><p>A GrokBot (xAI) account. It has a weekly usage quota: poorly configured routines burn through the quota fast, and the CFO agent helps you keep an eye on that.</p></div>
+    <div class="card"><h3>Your apps</h3><p>Connect to GrokBot what each card asks for: Gmail or Outlook, a contracts folder, a bank in read-only mode. To connect any service, ask: <code>"I want to connect to [service]. What do you need?"</code></p></div>
+    <div class="card"><h3>Optional tools</h3><p>Only for some agents: a post-scheduling tool with automatic DMs (Social), a wallet with a spending limit (Deal Hunter) and a database (Brain). The names used as examples are in each card.</p></div>
   </div>
+</div></section>
+
+<section id="glossario"><div class="wrap">
+  <span class="chip">Words that appear in the cards</span>
+  <h2>Quick glossary</h2>
+  <p class="sub">If any word in the cards is new to you, it's here.</p>
+  <dl class="gl">
+    <dt>X</dt><dd>The social network formerly called Twitter. GrokBot comes from the same company (xAI) and reads X directly.</dd>
+    <dt>DM</dt><dd>Direct message, in private, on a social network.</dd>
+    <dt>API key</dt><dd>A long password that a service gives you so another program (here, GrokBot) can use your account. Treat it like a password: paste it only into the secure field GrokBot opens.</dd>
+    <dt>Database</dt><dd>An organized file on the internet where notes, tables and texts are stored, to look up later. The Brain uses one.</dd>
+    <dt>Weekly quota</dt><dd>The usage limit your GrokBot plan gives you per week. A routine running for nothing burns the quota; the CFO shows how much each bot uses.</dd>
+    <dt>Connecting an app</dt><dd>Giving GrokBot permission to read (or change) one of your accounts, like Gmail or your bank. You authorize it on the service's own screen.</dd>
+    <dt>Venue</dt><dd>The city where a lawsuit would be heard if there's a dispute over the contract.</dd>
+    <dt>Level N0 to N4</dt><dd>How much the agent can do on its own, from "read-only" to "runs a whole process". See the Levels section.</dd>
+  </dl>
 </div></section>
 
 <section id="guia"><div class="wrap">
@@ -206,7 +227,7 @@
 
   <div class="step"><div class="b">1</div><div>
     <h3>Pick the work that takes up most of your week</h3>
-    <p>Don't start with all seven. Pick one: email (Shield), contracts (Due Diligence), social media (Social), quotes (Deal Hunter) or spending (CFO).</p>
+    <p>Don't start with all seven. Pick one: email (Shield), contracts (Due Diligence), social accounts (Social), quotes (Deal Hunter) or spending (CFO).</p>
   </div></div>
 
   <div class="step"><div class="b">2</div><div>
@@ -217,42 +238,45 @@
   <div class="step"><div class="b">3</div><div>
     <h3>Paste it into GrokBot and fill in the brackets</h3>
     <p>Paste the text into a new conversation in GrokBot and replace what's between [brackets] with your details. GrokBot creates the bot with a name, mission and rules.</p>
-<pre><span class="c"># example, for the Shield</span>
+<pre><span class="c"># example, on the Shield</span>
 <span class="k">Emails:</span> <span class="s">you@gmail.com, contact@yourcompany.com</span>
 <span class="k">Phone number(s):</span> <span class="s">+1 555 123 4567</span></pre>
   </div></div>
 
   <div class="step"><div class="b">4</div><div>
     <h3>Connect the apps and the schedule</h3>
-    <p>Connect what the card asks for and confirm the schedule. An API key (from a scheduling tool, for example) goes in the secure field GrokBot opens, never in the middle of the conversation.</p>
-<pre><span class="k">I want to connect my Gmail and my Outlook. Run this bot every day at 7 am.</span></pre>
+    <p>Connect what the card asks for and confirm the schedule. An API key (from a scheduling tool, for example) goes into the secure field GrokBot opens, never in the middle of the conversation.</p>
+<pre><span class="k">I want to connect my Gmail and my Outlook. Run this bot every day at 7am.</span></pre>
   </div></div>
 
   <div class="step"><div class="b">5</div><div>
     <h3>Run the 3 tests before you trust it</h3>
-    <p>Every card comes with three tests: missing information, forbidden request and alarm. If the bot gets one wrong, adjust the rule in the instruction and test again.</p>
+    <p>Every card comes with three tests: missing information, forbidden request and alarm. If the bot gets any of them wrong, adjust the rule in the instruction and test again.</p>
   </div></div>
 
   <div class="step"><div class="b">6</div><div>
     <h3>Follow up for 2 minutes a day</h3>
-    <p>Read the report, approve whatever is waiting for your OK. Once a week, adjust just one rule. Write down what broke in the card's "Failure log" table.</p>
+    <p>Read the report, approve whatever is waiting for your OK. Once a week, adjust just one rule: open the bot's conversation in GrokBot and tell it the change. Write down what broke in a spreadsheet or notebook of your own, copying the "Failure log" table from the end of the card.</p>
+<pre><span class="k">Change one rule: email from the tax authority always goes to the review list, never to the inbox.</span></pre>
   </div></div>
 
   <div class="step"><div class="b">7</div><div>
     <h3>Turn on the Brain and the Chief of Staff</h3>
-    <p>With two or more agents running, set up the Brain (memory that all the bots use) and then the Chief of Staff (an 8 am summary with everything that needs you).</p>
+    <p>With two or more agents running, set up the Brain (a database that becomes everyone's memory) and then the Chief of Staff (an 8am summary of everything that needs you). The database is the meeting point: the instructions already tell each bot to save its own report there, and the Chief reads from it. Connect the same database to each bot.</p>
+<pre><span class="c"># in each bot that existed before the Brain</span>
+<span class="k">Connect to the Brain's same database and save each report there as "Shield report", with the date.</span></pre>
   </div></div>
 </div></section>
 
 <section id="agentes"><div class="wrap">
   <span class="chip">The 7 agents</span>
   <h2>The cards, one per agent</h2>
-  <p class="sub">Each card shows the level, when it runs and what to connect. Open it to copy the ready-made instruction. The full card (7 principles, tests, checklist) is on the GitHub link.</p>
+  <p class="sub">Each card shows the level, when it runs and what to connect. Open it to copy the ready-made instruction. The full card (7 principles, tests, checklist) is at the GitHub link.</p>
 
   <div class="ag" id="escudo">
     <div class="top"><h3>🛡️ Shield</h3><span class="lv">N2 · prepares, you approve</span></div>
-    <p>Reads your inbox and spam every day, rescues good emails that landed in the trash, flags scams (like a change of bank details) and finds your phone number on people-search sites.</p>
-    <p class="meta"><b>When it runs:</b> every day at 7 am · <b>Connect:</b> Gmail and/or Outlook · <b>Never:</b> deletes email, clicks a suspicious link or sends a removal request without your OK.</p>
+    <p>Reads your inbox and spam every day, rescues good email that landed in the trash, flags scams (like a change of bank details) and finds your phone number on people-search sites.</p>
+    <p class="meta"><b>When it runs:</b> every day at 7am · <b>Connect:</b> Gmail and/or Outlook · <b>Never:</b> deletes email, clicks a suspicious link or sends a removal request without your OK.</p>
     <details><summary>See ready-made instruction</summary><!--PROMPT:01--></details>
     <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/en/01-escudo.md" target="_blank" rel="noopener">Full card →</a></p>
   </div>
@@ -268,14 +292,14 @@
   <div class="ag" id="redes">
     <div class="top"><h3>📱 Social</h3><span class="lv">N2 · prepares, you approve</span></div>
     <p>Researches trends on X, prepares posts in your voice and sets up the automatic keyword DM: comment → follow → email → link. Customers come from the conversation, not just the post.</p>
-    <p class="meta"><b>When it runs:</b> every morning and on request · <b>Connect:</b> scheduling tool with automatic DMs (API key) · <b>Never:</b> posts without your OK, replies to controversy or talks about price.</p>
+    <p class="meta"><b>When it runs:</b> every morning and on request · <b>Connect:</b> scheduling tool with automatic DMs (API key) · <b>Never:</b> posts without your OK, replies to controversy or talks about pricing.</p>
     <details><summary>See ready-made instruction</summary><!--PROMPT:03--></details>
     <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/en/03-redes.md" target="_blank" rel="noopener">Full card →</a></p>
   </div>
 
   <div class="ag" id="negociador">
     <div class="top"><h3>💸 Deal Hunter</h3><span class="lv">N2 · prepares, you approve</span></div>
-    <p>Finds suppliers, asks for quotes from an inbox of its own, compares at least 3 proposals and haggles. Buys only with your OK and within the limit you set.</p>
+    <p>Finds suppliers, asks for quotes from a mailbox of its own, compares at least 3 proposals and haggles. Buys only with your OK and within the limit you set.</p>
     <p class="meta"><b>When it runs:</b> when you ask · <b>Connect:</b> the bot's own email and, if you want, a wallet with a limit · <b>Never:</b> goes over budget, signs or pays upfront.</p>
     <details><summary>See ready-made instruction</summary><!--PROMPT:04--></details>
     <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/en/04-negociador.md" target="_blank" rel="noopener">Full card →</a></p>
@@ -283,7 +307,7 @@
 
   <div class="ag" id="financeiro">
     <div class="top"><h3>📊 CFO</h3><span class="lv">N0 · read-only</span></div>
-    <p>The chief financial officer without hands: finds duplicate subscriptions, expensive tools with little use, forgotten money owed to you and how much of GrokBot's weekly quota each bot uses.</p>
+    <p>The finance director without hands: finds duplicate subscriptions, expensive tools with little use, forgotten money owed to you and how much of GrokBot's weekly quota each bot uses.</p>
     <p class="meta"><b>When it runs:</b> every day, with a dashboard on Mondays · <b>Connect (read-only):</b> bank, PayPal, accounting system · <b>Never:</b> pays, transfers or cancels anything.</p>
     <details><summary>See ready-made instruction</summary><!--PROMPT:05--></details>
     <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/en/05-financeiro.md" target="_blank" rel="noopener">Full card →</a></p>
@@ -291,7 +315,7 @@
 
   <div class="ag" id="cerebro">
     <div class="top"><h3>🧠 Brain</h3><span class="lv">N3 · executes</span></div>
-    <p>The team's memory. Each GrokBot bot's memory is a summary that stays only with it; the Brain keeps everything word for word in a database that all the bots consult. Only it writes.</p>
+    <p>The team's memory. Each GrokBot bot's memory is a summary that stays only with it; the Brain keeps everything word for word in a database that all the bots consult. The other bots only add reports; organizing and deleting is up to it.</p>
     <p class="meta"><b>When it runs:</b> on request · <b>Connect:</b> a database (the card's example has a free plan) · <b>Never:</b> stores passwords, cards or documents.</p>
     <details><summary>See ready-made instruction</summary><!--PROMPT:06--></details>
     <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/en/06-cerebro.md" target="_blank" rel="noopener">Full card →</a></p>
@@ -299,8 +323,8 @@
 
   <div class="ag" id="chefe">
     <div class="top"><h3>🤝 Chief of Staff</h3><span class="lv">N3 · executes</span></div>
-    <p>Your single point of contact: reads everyone's reports, hands out tasks and delivers to you at 8 am what needs you, what's done and what's stuck. Doesn't approve anything in your place.</p>
-    <p class="meta"><b>When it runs:</b> every day at 8 am and whenever you talk to it · <b>Connect:</b> the other bots and the Brain · <b>Never:</b> spends money or talks to outsiders.</p>
+    <p>Your single point of contact: reads everyone's reports, hands out tasks and delivers at 8am what needs you, what's done and what's stuck. It doesn't approve anything in your place.</p>
+    <p class="meta"><b>When it runs:</b> every day at 8am and whenever you talk to it · <b>Connect:</b> the other bots and the Brain · <b>Never:</b> spends money or talks to outsiders.</p>
     <details><summary>See ready-made instruction</summary><!--PROMPT:07--></details>
     <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/en/07-chefe-de-gabinete.md" target="_blank" rel="noopener">Full card →</a></p>
   </div>
@@ -310,12 +334,12 @@
   <span class="chip">Autonomy levels</span>
   <h2>How much each agent can do on its own</h2>
   <p class="sub">The level comes from a fixed rule: if it involves money, something that can't be undone or outsiders, the agent prepares and you approve. When in doubt, the lower level.</p>
-  <div class="phase"><div class="tag">N0</div><div class="d"><strong>Read-only</strong><span>Reads and counts, doesn't change anything. CFO.</span></div></div>
+  <div class="phase"><div class="tag">N0</div><div class="d"><strong>Read-only</strong><span>Reads and counts, changes nothing. CFO.</span></div></div>
   <div class="phase"><div class="tag">N1</div><div class="d"><strong>Researches and prepares</strong><span>Delivers an opinion or a draft; the decision is yours. Due Diligence.</span></div></div>
   <div class="phase"><div class="tag">N2</div><div class="d"><strong>Prepares, you approve</strong><span>Gets everything ready, but nothing goes out without your OK. Shield, Social, Deal Hunter.</span></div></div>
   <div class="phase"><div class="tag">N3</div><div class="d"><strong>Executes</strong><span>Does on its own what is internal and can be undone. Brain, Chief of Staff.</span></div></div>
-  <div class="phase"><div class="tag">N4</div><div class="d"><strong>Runs an entire process</strong><span>Only after 2 months of clean reports. No agent in the kit starts here.</span></div></div>
-  <p class="note" style="margin-top:1.6em">To move up a level, each card states the condition (e.g., 4 weeks approving without corrections). The agent proposes, you decide. The cards were written by INEMA from a public class on agents in GrokBot; run the 3 tests on your GrokBot before you trust it.</p>
+  <div class="phase"><div class="tag">N4</div><div class="d"><strong>Runs a whole process</strong><span>Only after 2 months of clean reports. No agent in the kit starts here.</span></div></div>
+  <p class="note" style="margin-top:1.6em">To move up a level, each card states the condition (e.g., 4 weeks of approving without corrections). The agent proposes, you decide. The cards were written by INEMA based on a <a href="https://www.youtube.com/watch?v=2Vscrsz89MY" target="_blank" rel="noopener">public class about agents on GrokBot</a> (in English), the "reference class" cited in the cards. They are not the class's texts. Run the 3 tests on your GrokBot before you trust it.</p>
 </div></section>
 
 <footer>
