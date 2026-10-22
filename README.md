@@ -21,7 +21,7 @@ Guia completo (landing + passo a passo + instruções para copiar): **https://in
 | 3 | [📱 Redes](agentes/03-redes.md) | Tendências no X, posts na sua voz, DM automática por palavra-chave | N2 · prepara, você aprova | toda manhã + sob pedido |
 | 4 | [💸 Negociador](agentes/04-negociador.md) | Pede 3+ orçamentos por e-mail próprio, compara e pechincha | N2 · prepara, você aprova | sob pedido |
 | 5 | [📊 Financeiro](agentes/05-financeiro.md) | Acha assinatura duplicada, gasto à toa, dinheiro esquecido e o custo de cada bot | N0 · só olha | todo dia, painel na segunda |
-| 6 | [🧠 Cérebro](agentes/06-cerebro.md) | Memória compartilhada da equipe num banco de dados; só ele escreve | N3 · executa | sob pedido |
+| 6 | [🧠 Cérebro](agentes/06-cerebro.md) | Memória compartilhada da equipe num banco de dados; os outros só acrescentam relatórios, ele organiza | N3 · executa | sob pedido |
 | 7 | [🤝 Chefe de Gabinete](agentes/07-chefe-de-gabinete.md) | Coordena os outros e te entrega o resumo das 8h | N3 · executa | todo dia 8h |
 
 Cada ficha segue o formato **Ficha do Agente** do INEMA ([7 princípios](https://inematds.github.io/7pa/)): missão, contexto, dados, critério de sucesso, autonomia, observação e supervisão, mais a **instrução pronta** para colar, **3 testes** e o **checklist de supervisão**.

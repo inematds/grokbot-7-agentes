@@ -162,7 +162,7 @@
 <section id="oque"><div class="wrap">
   <span class="chip">O que é</span>
   <h2>Do bot solto para uma equipe com regras</h2>
-  <p class="sub">Criar um bot é fácil. O difícil é ele fazer o certo sem você vigiar o tempo todo. Por isso cada agente vem no formato <a href="https://inematds.github.io/7pa/" target="_blank" rel="noopener">Ficha do Agente</a> do INEMA.</p>
+  <p class="sub">Criar um bot é fácil. O difícil é ele fazer o certo sem você vigiar o tempo todo. Por isso cada agente vem no formato <a href="https://inematds.github.io/7pa/" target="_blank" rel="noopener">Ficha do Agente</a> do INEMA, com 7 princípios: missão, contexto, dados, critério de sucesso, autonomia, observação e supervisão.</p>
   <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="Os agentes do kit: escudo anti-spam, checagem prévia, redes sociais, negociador, diretor financeiro e cérebro compartilhado" loading="lazy" style="width:100%;display:block"></figure>
   <div class="grid g3">
     <div class="card"><h3>📋 Instrução pronta</h3><p>Um texto em português para colar no GrokBot. Você só preenche o que está entre [colchetes]: seus e-mails, seu tema, seu orçamento.</p></div>
@@ -264,7 +264,7 @@
     <h3>Ligue o Cérebro e o Chefe de Gabinete</h3>
     <p>Com dois ou mais agentes rodando, monte o Cérebro (um banco de dados que vira a memória de todos) e depois o Chefe de Gabinete (um resumo às 8h com tudo que precisa de você). O banco é o ponto de encontro: as instruções já mandam cada bot guardar ali o próprio relatório, e o Chefe lê de lá. Conecte o mesmo banco em cada bot.</p>
 <pre><span class="c"># em cada bot que já existia antes do Cérebro</span>
-<span class="k">Conecte ao mesmo banco de dados do Cérebro e guarde lá cada relatório como "relatório do Escudo", com a data.</span></pre>
+<span class="k">Conecte ao mesmo banco de dados do Cérebro e guarde lá cada relatório como "relatório do [NOME DESTE BOT]", com a data.</span></pre>
   </div></div>
 </div></section>
 
@@ -324,7 +324,7 @@
   <div class="ag" id="chefe">
     <div class="top"><h3>🤝 Chefe de Gabinete</h3><span class="lv">N3 · executa</span></div>
     <p>Seu único ponto de contato: lê os relatórios de todos, distribui tarefas e te entrega às 8h o que precisa de você, o que ficou pronto e o que travou. Não aprova nada no seu lugar.</p>
-    <p class="meta"><b>Quando roda:</b> todo dia às 8h e sempre que você falar com ele · <b>Conectar:</b> os outros bots e o Cérebro · <b>Nunca:</b> gasta dinheiro ou fala com gente de fora.</p>
+    <p class="meta"><b>Quando roda:</b> todo dia às 8h e sempre que você falar com ele · <b>Conectar:</b> o mesmo banco de dados do Cérebro · <b>Nunca:</b> gasta dinheiro ou fala com gente de fora.</p>
     <details><summary>Ver instrução pronta</summary><!--PROMPT:07--></details>
     <p class="meta"><a href="https://github.com/inematds/grokbot-7-agentes/blob/main/agentes/07-chefe-de-gabinete.md" target="_blank" rel="noopener">Ficha completa →</a></p>
   </div>
