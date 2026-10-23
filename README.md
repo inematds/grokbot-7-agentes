@@ -47,7 +47,7 @@ Crie um bot separado só se ele precisar de **memória própria**, **permissão 
 
 ## Avisos
 
-- As fichas foram escritas pelo INEMA a partir de uma [aula pública sobre agentes no GrokBot](https://www.youtube.com/watch?v=2Vscrsz89MY) (em inglês), a "aula de referência" citada nas fichas. Não são os textos originais da aula.
+- As fichas são um kit do INEMA.
 - Não foram testadas por nós em todas as contas e planos do GrokBot: **rode os 3 testes no seu antes de confiar**.
 - Ferramentas citadas nas fichas (agendador de posts, carteira, banco de dados) são exemplos, não exigência. Nenhuma tem vínculo com o INEMA.
 - Tudo que mexe com dinheiro ou fala com gente de fora começa no nível N2: **nada sai sem o seu OK**.

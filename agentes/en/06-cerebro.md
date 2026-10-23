@@ -2,7 +2,7 @@
 
 > **Level N3 · executes** — it saves to and searches the memory on its own; everything is internal, with no money and no outside people involved. **Golden rule:** only it organizes, corrects and deletes the memory; the other bots only **append** their own reports. **To move up to N4:** does not apply — it is an archivist, it does not coordinate anything.
 
-**When it runs:** on request (from the other bots, the Chief or you) · **What to connect:** a database the GrokBot can access (in the reference class: MongoDB Atlas, which has a free plan) · **Separate bot?** Yes — that is its whole reason to exist: its own memory and exclusive write permission.
+**When it runs:** on request (from the other bots, the Chief or you) · **What to connect:** a database the GrokBot can access (example: MongoDB Atlas, which has a free plan) · **Separate bot?** Yes — that is its whole reason to exist: its own memory and exclusive write permission.
 
 ## 1. Mission
 Give the team a memory that never gets lost. Each GrokBot bot's memory is a summary stored inside it: it remembers that "you live in such-and-such city", but it does not keep the transcript of a meeting, the exact text of a contract or a spreadsheet of numbers. And one bot cannot see what another knows. The Brain is the company's **library**: each bot has a little notebook in its pocket; the Brain keeps everything word for word and every bot has the key.
@@ -37,9 +37,9 @@ Stops and calls you when: someone asks to delete a lot at once, sensitive data s
 
 ---
 
-## How to connect the database (as in the reference class)
+## How to connect the database
 1. In the GrokBot: *"I want to connect to MongoDB. Tell me what you need."* — works for any service: ask what it needs.
-2. Create the free account on MongoDB Atlas and get the key/connection it asks for. Tip from the reference class: ask *"open your browser window"* — the GrokBot opens a browser, you click **take control**, log in, and it helps with the rest.
+2. Create the free account on MongoDB Atlas and get the key/connection it asks for. Tip: ask *"open your browser window"* — the GrokBot opens a browser, you click **take control**, log in, and it helps with the rest.
 3. Test: *"Get the information from my last 20 videos (views, likes, comments) and store it in the Brain."* You don't need to design any table: hand over the data and it organizes it.
 
 ## Ready-made instruction (paste into the GrokBot)

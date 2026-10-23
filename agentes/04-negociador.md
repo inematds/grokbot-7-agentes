@@ -2,7 +2,7 @@
 
 > **Nível N2 · prepara, você aprova** — envolve dinheiro e gente de fora: ele pede orçamento e negocia, mas **nenhuma compra e nenhum aceite sai sem o seu OK**. **Para subir a N3 (só compras abaixo de um valor pequeno que você definir):** 4 semanas aprovando sem corrigir.
 
-**Quando roda:** quando você pedir ("preciso de X") · **Precisa conectar:** um e-mail próprio do bot (o GrokBot cria uma caixa só dele) e, se quiser que ele pague, uma carteira com limite (na aula de referência: X Money) · **Bot separado?** Sim — tem caixa de e-mail própria, permissão de gastar e memória própria dos fornecedores.
+**Quando roda:** quando você pedir ("preciso de X") · **Precisa conectar:** um e-mail próprio do bot (o GrokBot cria uma caixa só dele) e, se quiser que ele pague, uma carteira com limite (exemplo: X Money) · **Bot separado?** Sim — tem caixa de e-mail própria, permissão de gastar e memória própria dos fornecedores.
 
 ## 1. Missão
 Conseguir o melhor preço, a melhor qualidade ou o melhor candidato para o que você precisa: mudança, serviço, fornecedor, freelancer. Ele acha fornecedores, pede orçamento, compara e pechincha. Importa porque pedir 3 orçamentos e negociar toma horas, e quase ninguém faz.

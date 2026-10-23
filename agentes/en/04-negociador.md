@@ -2,7 +2,7 @@
 
 > **Level N2 · prepares, you approve** — it involves money and outside people: it requests quotes and negotiates, but **no purchase and no acceptance goes out without your OK**. **To move up to N3 (only purchases below a small amount you define):** 4 weeks approving without corrections.
 
-**When it runs:** when you ask ("I need X") · **What to connect:** an email address of the bot's own (GrokBot creates a mailbox just for it) and, if you want it to pay, a wallet with a spending limit (in the reference lesson: X Money) · **Separate bot?** Yes — it has its own mailbox, permission to spend and its own memory of suppliers.
+**When it runs:** when you ask ("I need X") · **What to connect:** an email address of the bot's own (GrokBot creates a mailbox just for it) and, if you want it to pay, a wallet with a spending limit (example: X Money) · **Separate bot?** Yes — it has its own mailbox, permission to spend and its own memory of suppliers.
 
 ## 1. Mission
 Get the best price, the best quality or the best candidate for what you need: a move, a service, a supplier, a freelancer. It finds suppliers, requests quotes, compares and haggles. It matters because asking for 3 quotes and negotiating takes hours, and almost nobody does it.

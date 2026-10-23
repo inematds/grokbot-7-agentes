@@ -47,7 +47,7 @@ Create a separate bot only if it needs its own **memory**, a different **permiss
 
 ## Notes
 
-- The cards were written by INEMA based on a [public class about agents in GrokBot](https://www.youtube.com/watch?v=2Vscrsz89MY) (in English), the "reference class" cited in the cards. They are not the class's original texts.
+- The cards are an INEMA kit.
 - We haven't tested them on every GrokBot account and plan: **run the 3 tests on yours before you trust it**.
 - Tools mentioned in the cards (post scheduler, wallet, database) are examples, not requirements. None has any tie to INEMA.
 - Anything that touches money or talks to outside people starts at level N2: **nothing goes out without your OK**.

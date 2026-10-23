@@ -2,7 +2,7 @@
 
 > **Nivel N3 · ejecuta** — graba y busca en la memoria por sí solo; todo es interno, sin dinero y sin gente de fuera. **Regla de oro:** solo él organiza, corrige y borra la memoria; los otros bots únicamente **agregan** sus propios informes. **Para subir a N4:** no aplica — es un archivista, no coordina nada.
 
-**Cuándo corre:** a pedido (de los otros bots, del Jefe o tuyo) · **Qué hay que conectar:** una base de datos a la que el GrokBot pueda acceder (en la clase de referencia: MongoDB Atlas, que tiene plan gratuito) · **¿Bot separado?** Sí — es su razón de existir: memoria propia y permiso de escritura exclusivo.
+**Cuándo corre:** a pedido (de los otros bots, del Jefe o tuyo) · **Qué hay que conectar:** una base de datos a la que el GrokBot pueda acceder (ejemplo: MongoDB Atlas, que tiene plan gratuito) · **¿Bot separado?** Sí — es su razón de existir: memoria propia y permiso de escritura exclusivo.
 
 ## 1. Misión
 Darle al equipo una memoria que no se pierde. La memoria de cada bot del GrokBot es un resumen guardado dentro de él: recuerda que "vives en tal ciudad", pero no guarda la transcripción de una reunión, el texto exacto de un contrato ni una hoja de cálculo con números. Y un bot no ve lo que sabe el otro. El Cerebro es la **biblioteca** de la empresa: cada bot tiene un cuadernito en el bolsillo; el Cerebro guarda todo palabra por palabra y todos los bots tienen la llave.
@@ -37,9 +37,9 @@ Se detiene y te llama cuando: alguien pide borrar muchas cosas de una vez, apare
 
 ---
 
-## Cómo conectar la base de datos (como en la clase de referencia)
+## Cómo conectar la base de datos
 1. En el GrokBot: *"Quiero conectarme a MongoDB. Dime qué necesitas."* — sirve para cualquier servicio: pregúntale qué necesita.
-2. Crea la cuenta gratuita en MongoDB Atlas y consigue la llave/conexión que te pida. Consejo de la clase de referencia: pídele *"abre tu ventana de navegador"* — el GrokBot abre un navegador, tú haces clic en **tomar el control**, inicias sesión y él te ayuda con el resto.
+2. Crea la cuenta gratuita en MongoDB Atlas y consigue la llave/conexión que te pida. Consejo: pídele *"abre tu ventana de navegador"* — el GrokBot abre un navegador, tú haces clic en **tomar el control**, inicias sesión y él te ayuda con el resto.
 3. Prueba: *"Toma la información de mis últimos 20 videos (vistas, me gusta, comentarios) y guárdala en el Cerebro."* No necesitas diseñar ninguna tabla: entrega los datos y él los organiza.
 
 ## Instrucción lista (pega en el GrokBot)

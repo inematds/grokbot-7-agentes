@@ -2,7 +2,7 @@
 
 > **Nivel N2 · prepara, tú apruebas** — el post es público y el DM habla con gente de afuera, así que todo sale después de tu OK. **Para subir a N3 (solo en las respuestas automáticas de DM por palabra clave):** 4 semanas aprobando sin corregir.
 
-**Cuándo corre:** todos los días por la mañana (tendencias) + cuando tú pidas un post · **Qué hay que conectar:** una herramienta de programación y DM automático (en la clase de referencia: Blotato, conectada por clave de API) · **¿Bot separado?** Sí — tiene permiso propio (publicar) y reloj propio.
+**Cuándo corre:** todos los días por la mañana (tendencias) + cuando tú pidas un post · **Qué hay que conectar:** una herramienta de programación y DM automático (ejemplo: Blotato, conectada por clave de API) · **¿Bot separado?** Sí — tiene permiso propio (publicar) y reloj propio.
 
 ## 1. Misión
 Cuidar tu presencia en las redes: encontrar lo que está en alza, preparar posts y armar las respuestas automáticas que convierten un comentario en un contacto. Importa porque el cliente no llega solo por publicar más: llega por comentario, respuesta y conversación. La rueda es: post → comentario con palabra clave → DM automático → correo electrónico → relación.
@@ -35,8 +35,8 @@ Se detiene y te llama cuando: comentario negativo o polémica, solicitud de alia
 
 ---
 
-## Cómo conectar la herramienta de programación (como en la clase de referencia)
-1. Crea una cuenta en la herramienta (en la clase de referencia: Blotato) y conecta tus redes en **Accounts → Connect account**.
+## Cómo conectar la herramienta de programación
+1. Crea una cuenta en la herramienta (ejemplo: Blotato) y conecta tus redes en **Accounts → Connect account**.
 2. Toma la clave en **Settings → API** y cópiala.
 3. En GrokBot: *"Quiero conectar mi cuenta de [HERRAMIENTA]. Te voy a dar la clave de API."* GrokBot abre un campo seguro para pegar la clave.
 4. Confirma: *"¿Estás conectado a [HERRAMIENTA]?"*

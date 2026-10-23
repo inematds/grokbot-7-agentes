@@ -2,7 +2,7 @@
 
 > **Nível N3 · executa** — ele grava e busca na memória sozinho; é tudo interno, sem dinheiro e sem gente de fora. **Regra de ouro:** só ele organiza, corrige e apaga a memória; os outros bots apenas **acrescentam** os próprios relatórios. **Para subir a N4:** não se aplica — ele é um arquivista, não coordena nada.
 
-**Quando roda:** sob pedido (dos outros bots, do Chefe ou seu) · **Precisa conectar:** um banco de dados que o GrokBot consiga acessar (na aula de referência: MongoDB Atlas, que tem plano grátis) · **Bot separado?** Sim — é a própria razão de existir: memória própria e permissão de escrita exclusiva.
+**Quando roda:** sob pedido (dos outros bots, do Chefe ou seu) · **Precisa conectar:** um banco de dados que o GrokBot consiga acessar (exemplo: MongoDB Atlas, que tem plano grátis) · **Bot separado?** Sim — é a própria razão de existir: memória própria e permissão de escrita exclusiva.
 
 ## 1. Missão
 Dar à equipe uma memória que não se perde. A memória de cada bot do GrokBot é um resumo guardado dentro dele: lembra que "você mora em tal cidade", mas não guarda a transcrição de uma reunião, o texto exato de um contrato ou uma planilha de números. E um bot não vê o que o outro sabe. O Cérebro é a **biblioteca** da empresa: cada bot tem um caderninho no bolso; o Cérebro guarda tudo palavra por palavra e todo bot tem a chave.
@@ -37,9 +37,9 @@ Para e te chama quando: alguém pede para apagar muita coisa de uma vez, aparece
 
 ---
 
-## Como conectar o banco (como na aula de referência)
+## Como conectar o banco
 1. No GrokBot: *"Quero conectar ao MongoDB. Me diga o que você precisa."* — serve para qualquer serviço: pergunte o que ele precisa.
-2. Crie a conta grátis no MongoDB Atlas e pegue a chave/conexão que ele pedir. Dica da aula de referência: peça *"abra sua janela de navegador"* — o GrokBot abre um navegador, você clica em **assumir o controle**, faz login e ele ajuda no resto.
+2. Crie a conta grátis no MongoDB Atlas e pegue a chave/conexão que ele pedir. Dica: peça *"abra sua janela de navegador"* — o GrokBot abre um navegador, você clica em **assumir o controle**, faz login e ele ajuda no resto.
 3. Teste: *"Pegue as informações dos meus últimos 20 vídeos (visualizações, curtidas, comentários) e guarde no Cérebro."* Você não precisa desenhar tabela nenhuma: entregue os dados e ele organiza.
 
 ## Instrução pronta (cole no GrokBot)

@@ -2,7 +2,7 @@
 
 > **Level N2 · prepares, you approve** — a post is public and a DM talks to people outside your circle, so everything goes out only after your OK. **To move up to N3 (only for automatic DM replies triggered by a keyword):** 4 weeks of approving without corrections.
 
-**When it runs:** every morning (trends) + whenever you ask for a post · **What to connect:** a scheduling and automatic DM tool (in the reference lesson: Blotato, connected with an API key) · **Separate bot?** Yes — it has its own permission (publishing) and its own clock.
+**When it runs:** every morning (trends) + whenever you ask for a post · **What to connect:** a scheduling and automatic DM tool (example: Blotato, connected with an API key) · **Separate bot?** Yes — it has its own permission (publishing) and its own clock.
 
 ## 1. Mission
 Look after your social media presence: find what's trending, prepare posts, and build the automatic replies that turn a comment into a contact. It matters because customers don't come just from posting more: they come from comments, replies, and conversation. The loop is: post → keyword comment → automatic DM → email → relationship.
@@ -35,8 +35,8 @@ Stops and calls you when: negative comment or controversy, partnership or press 
 
 ---
 
-## How to connect the scheduling tool (as in the reference lesson)
-1. Create an account on the tool (in the reference lesson: Blotato) and connect your social networks at **Accounts → Connect account**.
+## How to connect the scheduling tool
+1. Create an account on the tool (example: Blotato) and connect your social networks at **Accounts → Connect account**.
 2. Get the key at **Settings → API** and copy it.
 3. In GrokBot: *"I want to connect my [TOOL] account. I'll give you the API key."* GrokBot opens a secure field to paste the key.
 4. Confirm: *"Are you connected to [TOOL]?"*

@@ -2,7 +2,7 @@
 
 > **Nivel N2 · prepara, tú apruebas** — involucra dinero y gente de afuera: pide presupuestos y negocia, pero **ninguna compra y ningún acuerdo sale sin tu OK**. **Para subir a N3 (solo compras por debajo de un valor pequeño que tú definas):** 4 semanas aprobando sin corregir.
 
-**Cuándo corre:** cuando tú lo pidas ("necesito X") · **Qué necesita conectar:** un correo propio del bot (GrokBot crea una casilla solo para él) y, si quieres que pague, una billetera con límite (en la clase de referencia: X Money) · **¿Bot separado?** Sí — tiene casilla de correo propia, permiso de gastar y memoria propia de los proveedores.
+**Cuándo corre:** cuando tú lo pidas ("necesito X") · **Qué necesita conectar:** un correo propio del bot (GrokBot crea una casilla solo para él) y, si quieres que pague, una billetera con límite (ejemplo: X Money) · **¿Bot separado?** Sí — tiene casilla de correo propia, permiso de gastar y memoria propia de los proveedores.
 
 ## 1. Misión
 Conseguir el mejor precio, la mejor calidad o el mejor candidato para lo que necesitas: mudanza, servicio, proveedor, freelancer. Encuentra proveedores, pide presupuesto, compara y regatea. Importa porque pedir 3 presupuestos y negociar toma horas, y casi nadie lo hace.
